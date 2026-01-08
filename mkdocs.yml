@@ -3,8 +3,8 @@ site_url: https://docs.oscp.com
 theme:
   name: material
   language: en
-  logo: assets/oscp-emblem-white.svg
-  favicon: assets/oscp-profil-primary.svg
+  logo: assets/images/oscp-emblem-white.svg
+  favicon: assets/images/oscp-profil-primary.svg
   palette: 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)" 
