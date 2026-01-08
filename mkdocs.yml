@@ -21,5 +21,23 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
+copyright: "Copyright &copy; 2026, OSCPS Motion Sensing Inc. All rights reserved."
 extra:
+    generator: true
     homepage: https://www.oscp.com
+    social:
+        - icon: fontawesome/brands/linkedin
+          link: https://www.linkedin.com/company/one-silicon-chip-photonics/
+          name: OSCP on LinkedIn
+        - icon: fontawesome/brands/github
+          link: https://github.com/OSCPS
+          name: OSCP on GitHub
+        - icon: fontawesome/brands/youtube
+          link: https://www.youtube.com/@oscpsmotionsensinginc.4037
+          name: OSCP on YouTube
+        - icon: fontawesome/brands/x-twitter
+          link: https://x.com/onesiliconchip
+          name: OSCP on X (formerly Twitter)
+        - icon: fontawesome/brands/facebook
+          link: https://www.facebook.com/profile.php?id=100042245063717
+          name: OSCP on Facebook
