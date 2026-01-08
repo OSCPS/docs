@@ -1,0 +1,25 @@
+site_name: OSCP Documentation
+site_url: https://docs.oscp.com
+theme:
+  name: material
+  language: en
+  logo: assets/oscp-emblem-white.svg
+  favicon: assets/oscp-profil-primary.svg
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+extra:
+    homepage: https://www.oscp.com
