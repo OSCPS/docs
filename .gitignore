@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+
+# MkDocs build output
+site/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
