@@ -21,6 +21,19 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.sections
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.extra
+
 copyright: >
   Copyright &copy; 2026, OSCPS Motion Sensing Inc. All rights reserved.
   <a href="#__consent">Change cookie settings.</a>
@@ -66,3 +79,33 @@ extra:
         - icon: fontawesome/brands/facebook
           link: https://www.facebook.com/profile.php?id=100042245063717
           name: OSCP on Facebook
+nav:
+  - Home: index.md
+  - IMU:
+    - Overview: IMU/index.md
+#    - MKM2:
+#        - Install: MKM2/info.md
+  - INS:
+    - Overview: INS/index.md
+#    - INS-Version:
+#        - Install: INS-Version/info.md
+  - Accessories:
+    - Overview: Accessories/index.md
+    - InertialGate:
+        - Index: InertialGate/index.md
+    - MicroGate:
+        - Index: MicroGate/index.md
+  - Integration: 
+    - Overview: Integration/index.md
+
+    - ROS2 Driver: 
+        - Index: ROS2/index.md
+        - Install: ROS2/install.md
+        - Setup & Config: ROS2/setup_config.md
+        - Launch & Usage: ROS2/launch.md
+
+    - ArduPilot Driver:
+        - Index: ArduPilot/index.md
+        - Install: ArduPilot/install.md
+        - Setup & Config: ArduPilot/setup_config.md
+        - Launch & Usage: ArduPilot/launch.md
