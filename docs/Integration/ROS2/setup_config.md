@@ -1,4 +1,4 @@
-#Setup and Configuration
+# Setup and Configuration
 
 The OSCP MK2M2 ROS 2 driver is configured via a YAML file passed at launch time. All parameters are loaded at startup and sent to the IMU over serial before streaming begins.
 

@@ -81,31 +81,33 @@ extra:
           name: OSCP on Facebook
 nav:
   - Home: index.md
+
   - IMU:
     - Overview: IMU/index.md
 #    - MKM2:
 #        - Install: MKM2/info.md
+
   - INS:
     - Overview: INS/index.md
 #    - INS-Version:
 #        - Install: INS-Version/info.md
+
   - Accessories:
     - Overview: Accessories/index.md
     - InertialGate:
-        - Index: InertialGate/index.md
+        - Index: Accessories/InertialGate/index.md
     - MicroGate:
-        - Index: MicroGate/index.md
+        - Index: Accessories/MicroGate/index.md
+
   - Integration: 
     - Overview: Integration/index.md
-
     - ROS2 Driver: 
-        - Index: ROS2/index.md
-        - Install: ROS2/install.md
-        - Setup & Config: ROS2/setup_config.md
-        - Launch & Usage: ROS2/launch.md
-
+        - Index: Integration/ROS2/index.md
+        - Install: Integration/ROS2/install.md
+        - Setup & Config: Integration/ROS2/setup_config.md
+        - Launch & Usage: Integration/ROS2/launch.md
     - ArduPilot Driver:
-        - Index: ArduPilot/index.md
-        - Install: ArduPilot/install.md
-        - Setup & Config: ArduPilot/setup_config.md
-        - Launch & Usage: ArduPilot/launch.md
+        - Index: Integration/ArduPilot/index.md
+        - Install: Integration/ArduPilot/install.md
+        - Setup & Config: Integration/ArduPilot/setup_config.md
+        - Launch & Usage: Integration/ArduPilot/launch.md

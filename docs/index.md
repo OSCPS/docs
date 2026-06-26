@@ -16,10 +16,10 @@ For more information visit [oscp.com](https://www.oscp.com).
 
 -  [__Accessories__](Accessories/index.md)
     
-    Information regarding OSCP Accessories such as InertialGate and MicroGate
+    Information regarding OSCP Accessories
 
 - [__Integration__](Integration/index.md)
 
-    Information regarding running OSCP products on different platforms  
+    Integration of OSCP products
 
 </div>
