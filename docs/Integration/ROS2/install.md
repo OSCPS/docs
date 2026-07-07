@@ -8,7 +8,7 @@ This section covers installing and building the OSCP ROS2 Driver stack, includin
 
 This driver is developed and tested on:
 
-- ROS 2 Humble (Ubuntu 22.04)
+- ROS 2 Humble or Jazzy (Ubuntu 22.04-24.04)
 - Python 3.10+
 - C++17 toolchain
 
