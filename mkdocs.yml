@@ -32,7 +32,11 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
-  - pymdownx.extra
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
 
 copyright: >
   Copyright &copy; 2026, OSCPS Motion Sensing Inc. All rights reserved.
@@ -101,6 +105,14 @@ nav:
 
   - Integration: 
     - Overview: Integration/index.md
+    - C Library:
+        - Overview: Integration/C-Library/index.md
+        - Integration Paths: Integration/C-Library/transports.md
+        - Frame Reference: Integration/C-Library/frames.md
+        - Command Reference: Integration/C-Library/commands.md
+        - Protocol & CRC: Integration/C-Library/protocol.md
+        - API Reference: Integration/C-Library/api.md
+        - Examples: Integration/C-Library/examples.md
     - ROS2 Driver: 
         - Index: Integration/ROS2/index.md
         - Install: Integration/ROS2/install.md
