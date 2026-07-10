@@ -32,9 +32,24 @@ oscp_err_t oscp_cobs_decode(const uint8_t *data, size_t data_len,
 
 | Function | Description |
 |----------|-------------|
-| `oscp_crc16` | Compute the CRC-16 over `len` bytes. See [Protocol & CRC](protocol.md#crc-16). |
+| `oscp_crc16` | Compute the CRC-16 over `len` bytes. |
 | `oscp_cobs_encode` | COBS-encode `data` into `enc`; writes the encoded length to `*enc_len`. |
 | `oscp_cobs_decode` | COBS-decode `data` into `dec`; writes the decoded length to `*dec_len`. |
+
+??? info "CRC-16"
+
+    | Parameter | Value |
+    |-----------|-------|
+    | Polynomial (Koopman form) | `0xD175` |
+    | Polynomial (normal form) | `0xA2EB` |
+    | Initial value | `0xFFFF` |
+
+    !!! warning "Use the normal form in a shift-register implementation"
+        `0xD175` is the **Koopman** representation. A textbook MSB-first
+        shift-register implementation must use the **normal form `0xA2EB`**
+        (`(0xD175 << 1) | 1`). Feeding `0xD175` directly into such a loop produces
+        wrong checksums. The library provides a precomputed 256-entry lookup table
+        derived from `0xA2EB`.
 
 ---
 

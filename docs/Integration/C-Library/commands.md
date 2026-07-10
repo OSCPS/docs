@@ -11,6 +11,8 @@ writes an ASCII command into a caller-owned buffer, framed for the transport sel
     if (oscp_cmd_config(cmd, sizeof(cmd), &len, OSCP_TRANSPORT_RS422) == OSCP_OK) {
         /* Transmit as-is */
         platform_dependant_rs422_write(cmd, len);
+        /* Good reliability habit to add a slight delay between commands */
+        platform_dependant_delay_ms(10);
     }
     ```
 
@@ -22,6 +24,8 @@ writes an ASCII command into a caller-owned buffer, framed for the transport sel
     if (oscp_cmd_config(cmd, sizeof(cmd), &len, OSCP_TRANSPORT_CANFD) == OSCP_OK) {
         /* Require 0x6FC CAN Command ID and DLC padding */
         platform_dependant_canfd_write(0x6FC, cmd, len);
+        /* Good reliability habit to add a slight delay between commands */
+        platform_dependant_delay_ms(10);
     }
     ```
 
@@ -205,4 +209,4 @@ oscp_cmd_wr(cmd, sizeof(cmd), &len, OSCP_USR_REG_FGA, 0x3F800000u, OSCP_TRANSPOR
 
 ---
 
-Next: [Protocol & CRC →](protocol.md)
+Next: [API reference →](api.md)

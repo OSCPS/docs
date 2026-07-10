@@ -7,7 +7,6 @@ the full command set, over **both** transports the family supports: streamed
 
 :material-github: [https://github.com/OSCPS/oscp-imu-c](https://github.com/OSCPS/oscp-imu-c){:target="_blank"}
 
-
 ---
 
 ## Build & install
@@ -42,8 +41,13 @@ That's the whole installation.
 
 !!! note "Requirements"
     A **C** compiler (GCC, Clang or MSVC) and a **little-endian** target
-    (Cortex-M, x86, ARM64). Big-endian hosts fail to compile by design and need tweaks on the decode part - see
-    [Protocol & CRC](protocol.md#endianness).
+    (Cortex-M, x86, ARM64). Decoding is a `memcpy` into packed structs, which
+    is correct only when host and wire byte orders match. 
+    
+    ??? warning "Big-endian targets fail to compile - by design"
+        A `#error` guard in `oscp_imu.h` stops the build on big-endian hosts. To
+        support one, replace the `decode_*` functions with explicit byte-swap
+        helpers. Reach out to OSCP if you need this.
 
 ---
 
@@ -96,29 +100,25 @@ That's the whole installation.
 
 <div class="grid cards" markdown>
 
--   [__Integration Paths__](transports.md)
+-   [__:material-go-kart-track: Integration Paths__](transports.md)
 
     Choose between the RS422 byte-stream parser and the CAN-FD message
     decoder.
 
--   [__Frame Reference__](frames.md)
+-   [__:material-book: Frame Reference__](frames.md)
 
     Every operating frame, field by field, with units and bytes
     layout.
 
--   [__Command Reference__](commands.md)
+-   [__:material-progress-wrench: Command Reference__](commands.md)
 
     All 17 commands, their state classes, and the argument enumerations.
 
--   [__Protocol & CRC__](protocol.md)
-
-    Wire format, COBS framing and CRC-16 parameters.
-
--   [__API Reference__](api.md)
+-   [__:material-api: API Reference__](api.md)
 
     Every public function, type and return code in one place.
 
--   [__Examples__](examples.md)
+-   [__:material-code-block-parentheses: Examples__](examples.md)
 
     Copy-paste starting points for RS422, CAN-FD and command transmission.
 

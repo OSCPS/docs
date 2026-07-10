@@ -45,7 +45,7 @@ Both halves produce the same decoded `oscp_frame_t`, such that an application ca
     }
     ```
 
-    See the [RS422 example](examples.md#rs422-byte-stream-parser) for a complete program.
+    See [Examples](examples.md) for more details.
 
 === "Transport B - CAN-FD message decoder"
 
@@ -67,7 +67,7 @@ Both halves produce the same decoded `oscp_frame_t`, such that an application ca
         own length. The decoder derives the true length from the frame type and
         verifies the CRC over the frame only. Padding is ignored.
 
-    See the [CAN-FD example](examples.md#can-fd-single-call-decode) for a complete handler.
+    See [Examples](examples.md) for more details.
 
 ---
 
