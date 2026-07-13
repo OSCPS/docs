@@ -99,9 +99,9 @@ nav:
   - Accessories:
     - Overview: Accessories/index.md
     - InertialGate:
-        - Index: Accessories/InertialGate/index.md
+        - Overview: Accessories/InertialGate/index.md
     - MicroGate:
-        - Index: Accessories/MicroGate/index.md
+        - Overview: Accessories/MicroGate/index.md
 
   - Integration: 
     - Overview: Integration/index.md
@@ -113,12 +113,12 @@ nav:
         - API Reference: Integration/C-Library/api.md
         - Examples: Integration/C-Library/examples.md
     - ROS2 Driver: 
-        - Index: Integration/ROS2/index.md
+        - Overview: Integration/ROS2/index.md
         - Install: Integration/ROS2/install.md
         - Setup & Config: Integration/ROS2/setup.md
         - Launch & Usage: Integration/ROS2/launch.md
     - ArduPilot Driver:
-        - Index: Integration/ArduPilot/index.md
+        - Overview: Integration/ArduPilot/index.md
         - Install: Integration/ArduPilot/install.md
         - Setup & Config: Integration/ArduPilot/setup.md
         - Launch & Usage: Integration/ArduPilot/launch.md
