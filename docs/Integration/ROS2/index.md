@@ -41,7 +41,7 @@ This documentation covers the OSCP ROS2 driver stack, including:
 
 -   [__:material-code-block-parentheses: Launch & Usage__](launch.md)
 
-    Launch the ROS 2 nodes and learn how to subscribe and integrate the driver into your applications.
+    Launch the ROS 2 nodes under different scenarios.
 
 </div>
 
