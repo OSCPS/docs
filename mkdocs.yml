@@ -115,10 +115,10 @@ nav:
     - ROS2 Driver: 
         - Index: Integration/ROS2/index.md
         - Install: Integration/ROS2/install.md
-        - Setup & Config: Integration/ROS2/setup_config.md
+        - Setup & Config: Integration/ROS2/setup.md
         - Launch & Usage: Integration/ROS2/launch.md
     - ArduPilot Driver:
         - Index: Integration/ArduPilot/index.md
         - Install: Integration/ArduPilot/install.md
-        - Setup & Config: Integration/ArduPilot/setup_config.md
+        - Setup & Config: Integration/ArduPilot/setup.md
         - Launch & Usage: Integration/ArduPilot/launch.md

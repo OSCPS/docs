@@ -23,5 +23,3 @@ ros2 launch oscp_imu_ros2 oscp_imu.launch.py config_file:=test.yaml
 ```
 
 ---
-
----
