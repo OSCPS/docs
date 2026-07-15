@@ -90,9 +90,9 @@ That's the whole installation.
 
 | Model | Description |
 |-------|-------------|
-| **MK2M2** | OSCP Tactical-Grade MEMS IMU |
-| **MK2E2** | OSCP Tactical-Grade MEMS + Optical Gyroscope IMU |
-| **MK2Z**  | OSCP Navigation-Grade MEMS + Optical Gyroscope IMU |
+| [**MK2M2**](https://www.oscp.com/products/mk2m2){:target="_blank"} | OSCP Tactical-Grade MEMS IMU |
+| [**MK2E2**](https://www.oscp.com/products/mk2e2){:target="_blank"} | OSCP Tactical-Grade MEMS + Optical Gyroscope IMU |
+| [**MK2Z**](https://www.oscp.com/products/mk2z){:target="_blank"} | OSCP Navigation-Grade MEMS + Optical Gyroscope IMU |
 
 ---
 
