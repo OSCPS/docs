@@ -1,6 +1,6 @@
 # Full Parameter List
 
-Apply the following parameters in [Mission Planner](https://ardupilot.org/planner/){:target="_blank"} to enable [OSCP IMU Product](https://www.oscp.com/technology){:target="_blank"} support and establish communication between the flight controller and the external IMU.
+Apply the following parameters in [Mission Planner](https://ardupilot.org/planner/){:target="_blank"} to enable [OSCP IMU Product](https://www.oscp.com/technology){:target="_blank"} support and establish communication between the flight controller and IMU product.
 
 ---
 
@@ -56,18 +56,13 @@ Set the following parameters in Mission Planner to enable OSCP IMU support and e
 <p>Sets the orientation of the flight controller. Value <code>12</code> corresponds to a specific board rotation <b>(PITCH180)</b>.
 </details>
 
-<details id="arming-skipchk" class="no-marker" style="border: 1px solid #e62922; background-color: #fff3e0; border-radius: 4px; padding: 10px;" open>
-
-<summary style="color: #e62922; font-weight: bold;">
-    <span>⚠</span> ARMING_SKIPCHK — Skip Arming Checks
-</summary>
-
-<p>
-Skips arming checks during development. Value <code>1048062</code> bypasses <b>ALL</b> pre-arm checks.
-<br><br>
-Please use with caution and only for testing purposes. Disable <b><code>0</code></b> once back to normal operation.
-</p>
+<details id="arming-skipchk">
+<summary>ARMING_SKIPCHK — Skip Arming Checks</summary>
+<p>Skips arming checks during development. Value <code>1048062</code> bypasses <b>ALL</b> pre-arm checks.</p>
 </details>
+
+!!!warning "Arming Skip Check"
+    Please use with caution and only for testing purposes. Disable <b><code>0</code></b> once back to normal operation.
 
 <details id="compass-external">
 <summary>COMPASS_EXTERNAL — External Compass</summary>

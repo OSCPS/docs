@@ -25,7 +25,7 @@ Establish a serial connection between target flight controller and your [OSCP IM
         ```
     5. Note the device path such as `/dev/ttyUSB0` or `/dev/ttyACM0`.
 
-        !!! important
+        !!! Note
             This serial device is required in Mission Planner.
 
 === "Windows"
@@ -46,7 +46,7 @@ Establish a serial connection between target flight controller and your [OSCP IM
         ```
     5. Note the COM number such as `COM3` or `COM7`.
     
-        !!! important
+        !!! Note
             This COM number is required in Mission Planner.
 
 ---

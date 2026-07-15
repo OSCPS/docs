@@ -178,7 +178,7 @@ build/<BOARD_NAME>/bin/
       Use the directory path corresponding to your actual target flight controller board and username.
 
       ```bash
-      \\wsl.localhost\Ubuntu-22.04\home\USERNAME\oscp_ardupilot\build\Pixhawk6C-bdshot\bin\arducopter.apj
+      ../oscp_ardupilot/build/Pixhawk6C-bdshot/bin/arducopter.apj
       ```
 
 ---
