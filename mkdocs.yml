@@ -119,6 +119,6 @@ nav:
         - Launch & Usage: Integration/ROS2/launch.md
     - ArduPilot Driver:
         - Overview: Integration/ArduPilot/index.md
-        - Install: Integration/ArduPilot/install.md
+        - Installation: Integration/ArduPilot/install.md
+        - Initialization: Integration/ArduPilot/launch.md
         - Setup & Config: Integration/ArduPilot/setup.md
-        - Launch & Usage: Integration/ArduPilot/launch.md
