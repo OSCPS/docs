@@ -5,7 +5,7 @@ Apply the following parameters in [Mission Planner](https://ardupilot.org/planne
 ---
 
 !!! warning "Important"
-    Ensure the `SERIALx_*` parameters correspond to the UART port connected to the <b>OSCP IMU</b> via <b>InertialGate</b>, <b>MicroGate</b>, or a custom USB adapter. Replace `x` with the appropriate serial port number (e.g., `SERIAL1`, `SERIAL2`, `SERIAL3`).
+    Ensure the `SERIALx_*` parameters correspond to the UART port connected to the __OSCP IMU__ via __InertialGate__, __MicroGate__, or a custom USB adapter. Replace `x` with the appropriate serial port number (e.g., `SERIAL1`, `SERIAL2`, `SERIAL3`).
 
 !!! tip "OSCP ExternalAHRS Setup"
     Ensure `EAHRS_TYPE = 15` is set to enable the OSCP IMU External AHRS backend.
@@ -62,7 +62,7 @@ Set the following parameters in Mission Planner to enable OSCP IMU support and e
 </details>
 
 !!!warning "Arming Skip Check"
-    Please use with caution and only for testing purposes. Disable <b><code>0</code></b> once back to normal operation.
+    Please use with caution and only for testing purposes. Disable with `0` once back to normal operation.
 
 <details id="compass-external">
 <summary>COMPASS_EXTERNAL — External Compass</summary>
@@ -138,12 +138,12 @@ Connect your target flight controller with the OSCP IMU to Mission Planner, then
 ??? success "Successful Installation"
     The firmware boots successfully and the OSCP External AHRS driver and Serial Number initialize without errors.
     
-    ![OSCP IMU Detected Successfully](../assets/images/success.png)
+    ![OSCP IMU Detected Successfully](assets/images/success.png)
 
 ??? failure "Unsuccessful Installation"
     Either the flight controller will never connect to Mission Planner, or if it does connect, the OSCP IMU is not detected. This is typically caused by a serial connection issue, the IMU not being powered, incorrect [Full Parameter List](setup.md) configurations, or the flight controller not being configured properly in `.hwdef`.
     
-    ![OSCP IMU Detection Failure](../assets/images/failure.png)
+    ![OSCP IMU Detection Failure](assets/images/failure.png)
 
 ---
 

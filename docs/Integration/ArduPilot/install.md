@@ -10,27 +10,26 @@ This integration is developed and tested on the following tools and platforms:
 
 <div class="grid cards" markdown>
 
--   :material-linux:{ .lg .middle } <b>[Ubuntu 22.04](https://ubuntu.com/download/desktop){:target="_blank"}</b>
+-   [__:material-linux: Ubuntu 22.04__](https://ubuntu.com/download/desktop){:target="_blank"}
     -
     Recommended development and build environment host used for compiling and testing firmware.
--   :material-git:{ .lg .middle } <b>[Git](https://git-scm.com){:target="_blank"}</b>
+-   [__:material-git: Git__](https://git-scm.com){:target="_blank"}
     -
     Source code version control and repository management.
--   :material-chip:{ .lg .middle } <b>[ARM GNU Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain){:target="_blank"}</b>
+-   [__:material-chip: ARM GNU Toolchain__](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain){:target="_blank"}
     -
     GCC-based toolchain for compiling ARM firmware.
--   :material-usb:{ .lg .middle } <b>[STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html){:target="_blank"}</b>
+-   [__:material-usb: STM32CubeProgrammer__](https://www.st.com/en/development-tools/stm32cubeprog.html){:target="_blank"}
     -
     Firmware deployment tool for STM32-based flight controllers.
--   :material-quadcopter:{ .lg .middle } <b>[Mission Planner](https://ardupilot.org/planner/docs/mission-planner-installation.html){:target="_blank"}</b>
+-   [__:material-quadcopter: Mission Planner__](https://ardupilot.org/planner/docs/mission-planner-installation.html){:target="_blank"}
     -
     Ground control station for configuration and flight management.
--   :material-serial-port:{ .lg .middle } <b>[OSCP IMU Hardware](https://www.oscp.com/technology){:target="_blank"}</b>
+-   [__:material-serial-port: OSCP IMU Hardware__](https://www.oscp.com/technology){:target="_blank"}
     -
     External IMU sensor unit for integration testing.
 
 </div>
-
 
 ### Prerequisites
 
@@ -62,7 +61,7 @@ This integration is developed and tested on the following tools and platforms:
 
     Restart your computer when prompted.
 
-    After restarting, launch <b>Ubuntu</b> from the Start Menu and complete the initial setup by creating a Linux username and password.
+    After restarting, launch __Ubuntu__ from the Start Menu and complete the initial setup by creating a Linux username and password.
 
     Verify that WSL is installed successfully:
 
@@ -102,12 +101,12 @@ source ~/.profile
 
 ## Hardware Configuration
 
-To ensure proper integration, the External AHRS (<b>OSCP IMU</b>) backend must be explicitly enabled in your flight controller's hardware definition.
+To ensure proper integration, the External AHRS (__OSCP IMU__) backend must be explicitly enabled in your flight controller's hardware definition.
 
 !!! important "Board Flash Size"
-    These steps apply regardless of your board's flash size. Boards with <b>1 MB</b> of flash have some features disabled by default to save flash.
+    These steps apply regardless of your board's flash size. Boards with __1 MB__ of flash have some features disabled by default to save flash.
 
-    The defines below ensure the OSCP backend remains compiled in, but you may need to disable other features to save flash for the External AHRS driver on <b>1 MB</b> boards.
+    The defines below ensure the OSCP backend remains compiled in, but you may need to disable other features to save flash for the External AHRS driver on __1 MB__ boards.
 
 
 1. Navigate to your target flight controller board's hardware definition directory:
@@ -238,27 +237,27 @@ function openTab(tabName) {
 
     === "Windows"
 
-        Open <b>Device Manager</b>
+        Open __Device Manager__
 
-        Expand <b>Universal Serial Bus devices</b>
+        Expand __Universal Serial Bus devices__
 
-        Confirm the board appears as <b>STM32 BOOTLOADER</b>
+        Confirm the board appears as __STM32 BOOTLOADER__
 
-        ![STMBootloader](../assets/images/stm32bootloader.png)
+        ![STMBootloader](assets/images/stm32bootloader.png)
 
     !!! warning
         If the device does not appear in either environment, disconnect the board and repeat/diagnose the DFU entry procedure.
 
-    <b>Flash using STM32CubeProgrammer:</b>
+    __Flash using STM32CubeProgrammer:__
 
     1. Open STM32CubeProgrammer.
-    2. Click <b>Connect</b>  to display the flight controller information.
+    2. Click __Connect__  to display the flight controller information.
 
-        ![STM32CubeProgrammer Connect](../assets/images/stm32bootloader_connect.png)
+        ![STM32CubeProgrammer Connect](assets/images/stm32bootloader_connect.png)
 
-    3. Select <b>Open file</b> to locate the `arducopter_with_bl.hex` file:
+    3. Select __Open file__ to locate the `arducopter_with_bl.hex` file:
 
-        ![STM32CubeProgrammer OpenFile](../assets/images/stm32bootloader_openfile.png)
+        ![STM32CubeProgrammer OpenFile](assets/images/stm32bootloader_openfile.png)
 
         ```
         build/<BOARD_NAME>/bin/arducopter_with_bl.hex
@@ -271,14 +270,14 @@ function openTab(tabName) {
             /home/username/ardupilot/build/pixhawk6c-bdshot/bin/arducopter_with_bl.hex
             ```
 
-    4. Press <b>Download</b> to flash the image.
+    4. Press __Download__ to flash the image.
 
-         ![STM32CubeProgrammer Download](../assets/images/stm32bootloader_download.png)
+         ![STM32CubeProgrammer Download](assets/images/stm32bootloader_download.png)
         
-    5. Wait until the progress bar reaches <b>100%</b> as this indicates the firmware has been successfully installed.
+    5. Wait until the progress bar reaches __100%__ as this indicates the firmware has been successfully installed.
     6. Disconnect the software and proceed to <a href="#" onclick="openTab('Mission Planner'); return false;">Mission Planner</a>.
     
-        ![STM32CubeProgrammer Connect](../assets/images/stm32bootloader_disconnect.png)
+        ![STM32CubeProgrammer Connect](assets/images/stm32bootloader_disconnect.png)
         
         !!! warning "Action Required: Complete Firmware Installation"
             Flashing via STM32CubeProgrammer only installs the bootloader. To complete the installation, you must switch to the [Mission Planner](#){: onclick="openTab('Mission Planner'); return false;" } tab and upload the custom `.apj` firmware.
@@ -294,12 +293,12 @@ function openTab(tabName) {
         !!! warning "Installing Mission Planner on Linux"
             Mission Planner is designed for Windows. While Mono provides a way to run it on Linux, you may experience minor bugs. For a more reliable experience, consider using a Windows.
 
-        1. Install the latest version of <b>Mono</b>:
+        1. Install the latest version of __Mono__:
         ```bash
         sudo apt install mono-complete
         ```
 
-        2. Download <b>Mission Planner</b> as a zip file from the [here](https://ardupilot.org/planner/docs/mission-planner-installation.html#mission-planner-on-linux){:target="_blank"}.
+        2. Download __Mission Planner__ as a zip file from the [here](https://ardupilot.org/planner/docs/mission-planner-installation.html#mission-planner-on-linux){:target="_blank"}.
 
         3. Unzip the downloaded file to a directory.
 
@@ -314,14 +313,14 @@ function openTab(tabName) {
         !!! note "Installing Mission Planner on Windows"
             Download the latest installer from [here](https://ardupilot.org/planner/docs/mission-planner-installation.html){:target="_blank"}.
 
-    <b>Flash using Mission Planner:</b>
+    __Flash using Mission Planner:__
 
     1. Open Mission Planner.
-    2. Navigate to <b>Setup</b> to access firmware installation options.
-    3. Select <b>Install Firmware</b> to open the firmware selection screen.
-    4. Click <b>Load Custom Firmware</b> to browse for your custom `.apj` firmware file.
+    2. Navigate to __Setup__ to access firmware installation options.
+    3. Select __Install Firmware__ to open the firmware selection screen.
+    4. Click __Load Custom Firmware__ to browse for your custom `.apj` firmware file.
 
-        ![Mission Planner Firmware](../assets/images/mission_planner_firmware.png)
+        ![Mission Planner Firmware](assets/images/mission_planner_firmware.png)
 
     5. Browse to the generated firmware:
 

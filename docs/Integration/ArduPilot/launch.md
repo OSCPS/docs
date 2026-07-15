@@ -34,10 +34,10 @@ Establish a serial connection between target flight controller and your [OSCP IM
         Ensure your adapter (InertialGate, MicroGate, or custom) is properly connected to both the flight controller and the OSCP IMU.
 
     1. Connect the flight controller via USB.
-    2. Open <b>Device Manager</b>.
-    3. Expand <b>Ports (COM & LPT)</b>.
+    2. Open __Device Manager__.
+    3. Expand __Ports (COM & LPT)__.
     
-        ![Device Manager COMX](../assets/images/com_device.png)
+        ![Device Manager COMX](assets/images/com_device.png)
     
     4. Look for a device such as:
     
@@ -53,12 +53,12 @@ Establish a serial connection between target flight controller and your [OSCP IM
 
 ### Connect in Mission Planner
 
-1. <b>Launch</b>  Mission Planner.
-2. <b>Select</b>  the correct communication port from the dropdown menu (e.g., `/dev/ttyUSB0` on Linux or `COM10` on Windows).
-3. <b>Configure</b>  the baud rate to match the flight controller's interface requirements.
-4. <b>Click Connect </b> to initialize the serial communication link.
+1. __Launch__  Mission Planner.
+2. __Select__  the correct communication port from the dropdown menu (e.g., `/dev/ttyUSB0` on Linux or `COM10` on Windows).
+3. __Configure__  the baud rate to match the flight controller's interface requirements.
+4. __Click Connect__ to initialize the serial communication link.
 
-    ![ArduPilot](../assets/images/ardupilot.png)
+    ![ArduPilot](assets/images/ardupilot.png)
 
 5. Wait for the flight controller to initialize and connect.
 
