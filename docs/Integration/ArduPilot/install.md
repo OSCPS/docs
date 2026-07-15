@@ -291,7 +291,7 @@ function openTab(tabName) {
     === "Linux"
 
         !!! warning "Installing Mission Planner on Linux"
-            Mission Planner is designed for Windows. While Mono provides a way to run it on Linux, you may experience minor bugs. For a more reliable experience, consider using a Windows.
+            Mission Planner is designed for Windows. While Mono provides a way to run it on Linux, you may experience minor bugs. For a more reliable experience, consider using Windows.
 
         1. Install the latest version of __Mono__:
         ```bash
