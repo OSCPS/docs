@@ -298,7 +298,7 @@ function openTab(tabName) {
         sudo apt install mono-complete
         ```
 
-        2. Download __Mission Planner__ as a zip file from the [here](https://ardupilot.org/planner/docs/mission-planner-installation.html#mission-planner-on-linux){:target="_blank"}.
+        2. Download __Mission Planner__ as a zip file from [here](https://ardupilot.org/planner/docs/mission-planner-installation.html#mission-planner-on-linux){:target="_blank"}.
 
         3. Unzip the downloaded file to a directory.
 
