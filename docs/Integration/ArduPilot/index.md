@@ -45,7 +45,7 @@ We've kept integration as simple as possible. Just clone our repository and foll
 
 <div class="grid cards" markdown>
 
--   [__:material-download-multiple: Install__](install.md)
+-   [__:material-download-multiple: Installation__](install.md)
 
     Install ArduPilot drivers and dependencies to get started.
 
@@ -53,7 +53,7 @@ We've kept integration as simple as possible. Just clone our repository and foll
 
     Full ArduPilot parameter list for OSCP IMU setup.
 
--   [__:material-code-block-parentheses: Launch & Usage__](launch.md)
+-   [__:material-code-block-parentheses: Initialization__](launch.md)
 
     Use Mission Planner to connect and configure flight modes.
 

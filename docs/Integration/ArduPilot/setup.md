@@ -136,7 +136,7 @@ Set the following parameters in Mission Planner to enable OSCP IMU support and e
 Connect your target flight controller with the OSCP IMU to Mission Planner, then verify the IMU is detected and initializes without errors.
 
 ??? success "Successful Installation"
-    The firmware boots successfully and the OSCP External AHRS driver and Serial Number initialize without errors.
+    The firmware boots successfully and the OSCP External AHRS driver and IMU Product initialize without errors.
     
     ![OSCP IMU Detected Successfully](assets/images/success.png)
 
