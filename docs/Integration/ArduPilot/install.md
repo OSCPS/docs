@@ -332,7 +332,7 @@ function openTab(tabName) {
             Use the directory path corresponding to your actual target flight controller board.
 
             ```bash
-            /home/username/ardupilot/build/pixhawk6c-bdshot/bin/arducopter.hex
+            /home/username/ardupilot/build/pixhawk6c-bdshot/bin/arducopter.apj
             ```
 
     6. Select the file and allow Mission Planner to complete the upload.
