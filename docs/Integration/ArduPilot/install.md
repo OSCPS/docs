@@ -133,7 +133,6 @@ To ensure proper integration, the External AHRS (__OSCP IMU__) backend must be e
     define AP_EXTERNAL_AHRS_ENABLED 1
     define AP_EXTERNAL_AHRS_BACKEND_DEFAULT_ENABLED 1
     define AP_EXTERNAL_AHRS_OSCP_ENABLED 1
-    define AP_AHRS_ENABLED 1
     define HAL_EXTERNAL_AHRS_DEFAULT 15
 
     # EKF3 & External Navigation Support
@@ -177,7 +176,7 @@ build/<BOARD_NAME>/bin/
       Use the directory path corresponding to your actual target flight controller board and username.
 
       ```bash
-      ../oscp_ardupilot/build/Pixhawk6C-bdshot/bin/arducopter.apj
+      oscp_ardupilot/build/Pixhawk6C-bdshot/bin
       ```
 
 ---
@@ -267,7 +266,7 @@ function openTab(tabName) {
             Use the directory path corresponding to your actual target flight controller board.
 
             ```bash
-            /home/username/ardupilot/build/pixhawk6c-bdshot/bin/arducopter_with_bl.hex
+            oscp_ardupilot/build/pixhawk6c-bdshot/bin/arducopter_with_bl.hex
             ```
 
     4. Press __Download__ to flash the image.
@@ -332,7 +331,8 @@ function openTab(tabName) {
             Use the directory path corresponding to your actual target flight controller board.
 
             ```bash
-            /home/username/ardupilot/build/pixhawk6c-bdshot/bin/arducopter.apj
+            oscp_ardupilot/build/Pixhawk6C-bdshot/bin/arducopter.apj
+
             ```
 
     6. Select the file and allow Mission Planner to complete the upload.
