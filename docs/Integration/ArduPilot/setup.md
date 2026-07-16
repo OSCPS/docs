@@ -53,7 +53,7 @@ Set the following parameters in Mission Planner to enable OSCP IMU support and e
 
 <details id="ahrs-orientation">
 <summary>AHRS_ORIENTATION — Board Rotation</summary>
-<p>Sets the orientation of the flight controller. Value <code>12</code> corresponds to a specific board rotation <b>(PITCH180)</b>.
+<p>Sets the orientation of the OSCP IMU Product. Value <code>12</code> corresponds to a specific board rotation <b>(PITCH180)</b>.
 </details>
 
 <details id="arming-skipchk">
