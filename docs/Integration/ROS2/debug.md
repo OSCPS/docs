@@ -3,7 +3,7 @@ Use this tool to **detect dropped IMU packets** and validate communication quali
 
 ```bash
 # Quick 60-second check
-ros2 run oscp_imu_testing counter_monitor --ros-args -p duration:=60.0
+ros2 run oscp_imu_ros2 counter_tracker --ros-args -p duration:=60.0
 
 # Expected output (good):
 # /oscp/raw: 100.0 Hz (6000 msgs)
@@ -16,13 +16,13 @@ ros2 run oscp_imu_testing counter_monitor --ros-args -p duration:=60.0
 
 ### Validate Before Deployment (5 minutes)
 ```bash
-ros2 run oscp_imu_testing counter_monitor --ros-args -p duration:=300.0
+ros2 run oscp_imu_ros2 counter_tracker --ros-args -p duration:=300.0
 ```
 **Expected:** Zero dropped packets, all topics at correct Hz.
 
 ### Monitor Continuously (until Ctrl+C)
 ```bash
-ros2 run oscp_imu_testing counter_monitor
+ros2 run oscp_imu_ros2 counter_tracker
 ```
 
 ---
