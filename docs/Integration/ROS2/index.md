@@ -31,17 +31,26 @@ This documentation covers the OSCP ROS2 driver stack, including:
 
 <div class="grid cards" markdown>
 
--   [__:material-download-multiple: Install__](install.md)
+-   [**__:material-download-multiple: Install__**](install.md)
 
     Install the ROS 2 package and its dependencies to get started quickly.
 
--   [__:material-progress-wrench: Setup & Config__](setup.md)
+-   [**__:material-progress-wrench: Setup & Config__**](setup.md)
 
     Configure the driver, parameters, topics, frames, and communication settings.
 
--   [__:material-code-block-parentheses: Launch & Usage__](launch.md)
+-   [**__:material-code-block-parentheses: Launch & Usage__**](launch.md)
 
     Launch the ROS 2 nodes under different scenarios.
+
+-   [**__:material-cog-sync: Services__**](services.md)
+
+    Interact with the driver's ROS 2 services for calibration, orientation, and device control.
+
+-   [**__:material-bug-check: Debugging__**](debug.md)
+
+    Troubleshoot message output and general ROS 2 issues.
+
 
 </div>
 
