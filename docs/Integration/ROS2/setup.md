@@ -13,7 +13,7 @@ The `config_file` argument must point to a YAML file located in `oscp_imu_ros2/c
 
 ---
 
-## YAML Structure (ex. test.yaml)
+## YAML Structure (ex. default.yaml)
 
 ```yaml
 oscp_imu_node:
@@ -24,13 +24,14 @@ oscp_imu_node:
     frame_id: "imu_link"
     pub_accel_in_g: false
 
-    operating_mode: "MEDIUM"
+    operating_mode: "LOW"
 
-    publish_standard_ros: true           # Default: True
-    publish_oscp_raw: true               # Default: True
-    publish_oscp_euler: true            # Default: False
-    publish_oscp_quat: true              # Default: True
-    publish_oscp_rotation_matrix: true  # Default: False
+    publish_standard_ros: True            # Default: True
+    publish_oscp_raw: True                # Default: True
+    publish_oscp_euler: False              # Default: False
+    publish_oscp_quat: True               # Default: True
+    publish_oscp_rotation_matrix: False    # Default: False
+    publish_oscp_gnss: False               # Default: False
 
     watchdog_timeout_ms: 1000.0
     parser_stats_log_interval_s: 0.0
