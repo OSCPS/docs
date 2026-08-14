@@ -13,11 +13,12 @@ The `config_file` argument must point to a YAML file located in `oscp_imu_ros2/c
 
 ---
 
-## YAML Structure (ex. test.yaml)
+## YAML Structure (ex. default.yaml)
 
 ```yaml
 oscp_imu_node:
   ros__parameters:
+    transport: "RS422"
     device: "/dev/ttyUSB0"
     baudrate: 921600
     frame_id: "imu_link"
@@ -25,33 +26,44 @@ oscp_imu_node:
 
     operating_mode: "LOW"
 
+    publish_standard_ros: True            # Default: True
+    publish_oscp_raw: True                # Default: True
+    publish_oscp_euler: False              # Default: False
+    publish_oscp_quat: True               # Default: True
+    publish_oscp_rotation_matrix: False    # Default: False
+    publish_oscp_gnss: False               # Default: False
+
+    watchdog_timeout_ms: 1000.0
+    parser_stats_log_interval_s: 0.0
+
     gyro_range: "DPS_250"
     accel_range: "G_4"
-    incl_range: "G_1_0"
+    incl_range: "G_0_5"
 
-    gyro_filter_mode: "LP_AND_HP"
+    gyro_filter_mode: "DISABLED"
     gyro_lpf: "C0"
-    gyro_hpf: "C1"
+    gyro_hpf: "C0"
 
-    accel_filter_mode: "LP_ONLY"
+    accel_filter_mode: "DISABLED"
     accel_lpf: "C0"
     accel_hpf: "C0"
 
     ahrs_convention: "NWU"
-    ahrs_heading: "INTERNAL_MAGNETOMETER"
+    ahrs_heading_source: "NONE"
 
     misalignment: true
-
-    standard_ros_enabled: true
-    oscp_raw_enabled: true
-    oscp_euler_enabled: false
-    oscp_quat_enabled: true
-    oscp_rotation_matrix_enabled: false
 ```
 
 ---
 
 ## ROS Parameters
+
+???+ note "Transport"
+
+    | Value | Description |
+    |---|---|
+    | `RS422` | RS-422 serial communication |
+    | `CAN` | CAN communication |
 
 ???+ note "Device"
 
@@ -74,15 +86,22 @@ oscp_imu_node:
 
     | Parameter | Type | Description |
     |---|---|---|
-    | `standard_ros_enabled` | bool | Publish `sensor_msgs/Imu`, `MagneticField`, `Temperature` |
-    | `oscp_raw_enabled` | bool | Publish raw OSCP frame |
-    | `oscp_quat_enabled` | bool | Publish quaternion OSCP frame |
-    | `oscp_euler_enabled` | bool | Publish Euler angles OSCP frame |
-    | `oscp_rotation_matrix_enabled` | bool | Publish rotation matrix OSCP frame |
+    | `publish_standard_ros` | bool | Publish `sensor_msgs/Imu`, `MagneticField`, `Temperature` |
+    | `publish_oscp_raw` | bool | Publish raw OSCP frame |
+    | `publish_oscp_quat` | bool | Publish quaternion OSCP frame |
+    | `publish_oscp_euler` | bool | Publish Euler angles OSCP frame |
+    | `publish_oscp_rotation_matrix` | bool | Publish rotation matrix OSCP frame |
 
 !!! Warning 
     Enabling too many output frames simultaneously at MEDIUM (500 Hz) may cause controller overruns on the IMU. Refer to the IMU datasheet for guidance.
 
+??? note "Watchdog and Parser Statistics"
+
+    The watchdog monitors the time between successfully received IMU frames. If no valid frame is received within `watchdog_timeout_ms`, the node reports a communication timeout.
+
+    The parser statistics provide information about the received and processed IMU frames, including parser errors and packet-related statistics. They are useful for diagnosing serial communication and packet integrity issues.
+    
+     `parser_stats_log_interval_s` controls logging only and does not affect the IMU's output rate or communication behavior.
 ---
 ## IMU Configurations
 
