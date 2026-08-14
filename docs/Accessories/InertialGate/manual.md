@@ -4,7 +4,7 @@
 InertialGate is a versatile IMU interface board designed for easy integration of OSCP Inertial Systems across multiple platforms. It can be used as an Evaluation Kit for our Inertial Systems. 
 
 <figure markdown="span">
-  ![OSCP InertialGate board, top-down render](assets/images/inertial_gate_no_bg_render.png){ width=400 }
+  ![OSCP InertialGate board, top-down render](assets/images/inertial_gate_no_bg_render.png){ width=400 .transparent }
 </figure>
 
 ---

@@ -1,0 +1,19 @@
+.md-typeset figure img {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 0px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset figure img {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.md-typeset figure img.transparent {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+[data-md-color-scheme="slate"] .md-typeset figure img.transparent {
+  box-shadow: none;
+}
