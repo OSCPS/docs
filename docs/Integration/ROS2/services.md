@@ -1,4 +1,4 @@
-# OSCP IMU ROS 2 Services
+# Services
 
 This section documents the ROS 2 services provided by the OSCP IMU driver.
 

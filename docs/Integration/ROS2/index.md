@@ -1,4 +1,4 @@
-# **OSCP ROS2 Driver**
+# OSCP ROS2 Driver
 
 ## ROS Architecture Overview 
 This documentation covers the OSCP ROS2 driver stack, including:

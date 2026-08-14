@@ -1,5 +1,4 @@
-# **Inertial Gate**
-
+# InertialGate
 
 ## 1. Features 
  - Support RS422 and CAN-FD variants

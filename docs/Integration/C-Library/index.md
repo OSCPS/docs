@@ -1,4 +1,4 @@
-# **OSCP IMU C Library**
+# OSCP IMU C Library
 
 `oscp-imu-c` is a portable, dependency-light C library for communicating with
 OSCP MK2 IMU units. It decodes every operating frame the unit emits and encodes

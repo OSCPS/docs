@@ -1,8 +1,7 @@
 # Home
 
-:material-progress-wrench: This documentation is a work in progress. Content may change.
-
-:material-link-variant: For more information visit [oscp.com](https://www.oscp.com).
+!!! info "Work in Progress"
+    :material-progress-wrench: This documentation is a work in progress. Content may change.
 
 <div class="grid cards" markdown>
 
@@ -23,3 +22,5 @@
     Integration of OSCP products
 
 </div>
+
+:material-link-variant: For more information visit [oscp.com](https://www.oscp.com).

@@ -99,9 +99,9 @@ nav:
   - Accessories:
     - Overview: Accessories/index.md
     - InertialGate:
-        - Overview: Accessories/InertialGate/index.md
+        - User Manual: Accessories/InertialGate/index.md
     - MicroGate:
-        - Overview: Accessories/MicroGate/index.md
+        - User Manual: Accessories/MicroGate/index.md
 
   - Integration: 
     - Overview: Integration/index.md
@@ -114,7 +114,7 @@ nav:
         - Examples: Integration/C-Library/examples.md
     - ROS2 Driver: 
         - Overview: Integration/ROS2/index.md
-        - Install: Integration/ROS2/install.md
+        - Installation: Integration/ROS2/install.md
         - Setup & Config: Integration/ROS2/setup.md
         - Launch & Usage: Integration/ROS2/launch.md
         - Services: Integration/ROS2/services.md

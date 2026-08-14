@@ -1,3 +1,5 @@
-:material-progress-wrench: This documentation is a work in progress. Content may change.
+# IMU
 
-:material-link-variant: For more information visit [oscp.com](https://www.oscp.com).
+!!! info "Work in Progress"
+    :material-progress-wrench: This documentation is a work in progress. Content may change.
+    
