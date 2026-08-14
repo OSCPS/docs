@@ -22,9 +22,15 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
   features:
-    - content.code.copy
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tabs
-    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.indexes   
+    - navigation.path
+    - content.code.copy
+    - search.suggest
+
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -87,40 +93,41 @@ nav:
   - Home: index.md
 
   - IMU:
-    - Overview: IMU/index.md
+    - IMU/index.md
 #    - MKM2:
 #        - Install: MKM2/info.md
 
   - INS:
-    - Overview: INS/index.md
+    - INS/index.md
 #    - INS-Version:
 #        - Install: INS-Version/info.md
 
   - Accessories:
-    - Overview: Accessories/index.md
+    - Accessories/index.md
     - InertialGate:
-        - User Manual: Accessories/InertialGate/index.md
+        - Manual: Accessories/InertialGate/manual.md
+        - Changelog: Accessories/InertialGate/changelog.md
     - MicroGate:
-        - User Manual: Accessories/MicroGate/index.md
+        - Manual: Accessories/MicroGate/manual.md
 
   - Integration: 
-    - Overview: Integration/index.md
+    - Integration/index.md
     - C Library:
-        - Overview: Integration/C-Library/index.md
+        - Integration/C-Library/index.md
         - Integration Paths: Integration/C-Library/transports.md
         - Frame Reference: Integration/C-Library/frames.md
         - Command Reference: Integration/C-Library/commands.md
         - API Reference: Integration/C-Library/api.md
         - Examples: Integration/C-Library/examples.md
     - ROS2 Driver: 
-        - Overview: Integration/ROS2/index.md
+        - Integration/ROS2/index.md
         - Installation: Integration/ROS2/install.md
         - Setup & Config: Integration/ROS2/setup.md
         - Launch & Usage: Integration/ROS2/launch.md
         - Services: Integration/ROS2/services.md
         - Debug: Integration/ROS2/debug.md
     - ArduPilot Driver:
-        - Overview: Integration/ArduPilot/index.md
+        - Integration/ArduPilot/index.md
         - Installation: Integration/ArduPilot/install.md
         - Initialization: Integration/ArduPilot/launch.md
         - Setup & Config: Integration/ArduPilot/setup.md

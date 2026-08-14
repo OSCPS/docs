@@ -5,7 +5,7 @@
  - USB-C virtual COM port with RS422
  - Raspberry Pi HAT+ compatibility
  - Headers for multi-platform integration
- - Compact "57x66 mm" design with M3 holes
+ - Compact 57 × 66 mm design with M3 holes
 
 ## 2. Description 
 InertialGate is a versatile IMU interface board designed for easy integration of OSCP Inertial Systems across multiple platforms. It can be used as an Evaluation Kit for our Inertial Systems. 
@@ -25,7 +25,7 @@ In standalone mode, no initial setup is required for InertialGate. Simply connec
   <figcaption>Figure 2: IMU Connection Receptacle on InertialGate (Standalone Mode)</figcaption>
 </figure>
 
-### 3.2. Rasberry Pi 
+### 3.2. Raspberry Pi 
 InertialGate is fully compatible with the Raspberry Pi HAT+ specification and can be stacked directly on top of any Raspberry Pi equipped with a standard 40-pin GPIO header. The board includes an onboard EEPROM pre-programmed according to the HAT+ specification, allowing the operating system to automatically identify the board upon boot. To verify that InertialGate is correctly detected, run the following command:
 
 ```bash
@@ -33,7 +33,7 @@ cat /proc/device-tree/hat/product
 ```
 If the board is properly recognized, this command returns the product name InertialGate. No manual device tree configuration is required for the identification step. 
 
-Once physically installed and detected, additional driver overlays must be configured in `/boot/firmware/config.txt` to enable **UART** or **CAN-FD** communication. Refer to [Section 7.1.2](#71240-pin-header) and [Section 7.2.1](#72140-pin-header) for the complete setup instructions for each respective variant.
+Once physically installed and detected, additional driver overlays must be configured in `/boot/firmware/config.txt` to enable **UART** or **CAN-FD** communication. Refer to [Section 7.1.2](#712-40-pin-header) and [Section 7.2.1](#721-40-pin-header) for the complete setup instructions for each respective variant.
 
 ## 4. IMU Protocol Configuration
 InertialGate must be configured to route the appropriate communication signal to the rest of the system. Jumpers **J1** and **J2** are used to switch between RS422 and CAN-FD protocols. The following subsections illustrate the correct jumper placement for each protocol.
@@ -84,10 +84,10 @@ In this configuration, the Raspberry Pi must be powered by a suitable adapter ca
 
 !!! warning  "One Single Power Supply At A Time"
 
-    Do not power InertialGate via its USB-C port [(Section 5.1)](#51via-usb-c) simultaneously while it is stacked on a Raspberry Pi. Use only one power source at a time.
+    Do not power InertialGate via its USB-C port [(Section 5.1)](#51-via-usb-c) simultaneously while it is stacked on a Raspberry Pi. Use only one power source at a time.
 
 ## 6. Powering an OSCP IMU
-To power an IMU connected to InertialGate (see [Section 3](#3initial-setup)), two options are available. The first is using a +12V to +34V barrel connector (5.5 × 2.1 mm - _**center positive and outer negative**_). The second is using the screw terminal block located next to the IMU connector, which also accepts +12V to +34V. **Do not use both options simultaneously.** 
+To power an IMU connected to InertialGate (see [Section 3](#3-initial-setup)), two options are available. The first is using a +12V to +34V barrel connector (5.5 × 2.1 mm - _**center positive and outer negative**_). The second is using the screw terminal block located next to the IMU connector, which also accepts +12V to +34V. **Do not use both options simultaneously.** 
 
 !!! warning  "Screw Terminal Block Polarity"
 
@@ -105,7 +105,7 @@ The **IMU PWR LED** will illuminate when either power option is used.
 The following subsections describe the available options for gathering data from InertialGate for both RS422 and CAN-FD variants.
 
 ### 7.1. RS422 Variant
-With jumpers set to RS422 (see [Section 4.1](#41rs422-imu-variant)), InertialGate translates RS422 to **UART**, simplifying integration with other subsystems. Three options are available to access the data.
+With jumpers set to RS422 (see [Section 4.1](#41-rs422-imu-variant)), InertialGate translates RS422 to **UART**, simplifying integration with other subsystems. Three options are available to access the data.
 
 #### 7.1.1. USB-C Connection
 The simplest method is to connect InertialGate directly to a laptop via the USB-C port. The board is recognized as a **Virtual COM Port** through its integrated _FTDI FT232HL_ chip. On Windows, it typically appears as `COMX`, on macOS, it appears under `/dev/tty.X` and on Linux, it often appears as `/dev/ttyUSBX`. The RX/TX LEDs are located on the bottom-left corner of the board, providing visual indication of UART data transmission and reception.
@@ -130,7 +130,7 @@ Three male headers (**J4**) provide access to TX, RX and GND signals at the bott
 ### 7.2. CAN-FD Variant
 !!! info  "Next Revision of the User Manual"
 
-    This section refers will be refined in the next revision of the User Manual.
+    This section will be refined in the next revision of the User Manual.
 
 #### 7.2.1. 40-Pin Header
 #### 7.2.2. Direct CAN Pins
@@ -149,3 +149,8 @@ InertialGate is delivered with a 3D-printed ABS enclosure. This enclosure is pro
 The enclosure uses a clip-based retention mechanism and can be removed easily without tools. To remove it, press simultaneously on both sides of the white area of the enclosure, specifically at the front of the unit near the connector, and gently pull the enclosure away from the board.
 
 Once the enclosure is removed, InertialGate can be used as a standard OEM board. In this configuration, it may be mounted in any orientation or location that best suits the integration requirements of the target system.
+
+---
+
+!!! info "Revision"
+    This documentation tracks **REV03** (2026-04-06). See the [changelog](changelog.md) for revision history.

@@ -126,5 +126,5 @@ That's the whole installation.
 
 ---
 
-!!! info "Version"
+!!! info "Revision"
     This documentation tracks **oscp-imu-c v0.2.0**.
