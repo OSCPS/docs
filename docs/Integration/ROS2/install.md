@@ -37,3 +37,5 @@ source install/setup.bash
 ```
 
 ---
+
+Next: [Setup & Config →](setup.md)

@@ -128,7 +128,7 @@ nav:
         - Setup & Config: Integration/ROS2/setup.md
         - Launch & Usage: Integration/ROS2/launch.md
         - Services: Integration/ROS2/services.md
-        - Debug: Integration/ROS2/debug.md
+        - Debugging: Integration/ROS2/debug.md
     - ArduPilot Driver:
         - Integration/ArduPilot/index.md
         - Installation: Integration/ArduPilot/install.md

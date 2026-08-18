@@ -22,7 +22,7 @@ ros2 launch oscp_imu_ros2 oscp_imu.launch.py config_file:=test.yaml
 
 ### Launch IMU node using a launch files
 
-```bash
+```python
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -45,3 +45,7 @@ def generate_launch_description():
         ),
     ])
 ```
+
+---
+
+Next: [Services →](services.md)

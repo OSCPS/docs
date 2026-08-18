@@ -199,3 +199,5 @@ oscp_imu_node:
     | `ahrs_heading` | `NONE`, `INTERNAL_MAGNETOMETER` | Heading source used by the AHRS filter |
 
 ---
+
+Next: [Launch & Usage →](launch.md)

@@ -166,7 +166,8 @@ success: false
 message: "Invalid YAML structure: missing 'soft_iron' field"
 ```
 
-> **⚠️ Warning:** Applying a magnetometer configuration writes calibration values to the IMU and saves them to flash memory. Verify the calibration file contains correct values before applying it. Incorrect calibration can degrade magnetometer accuracy.
+!!! Warning 
+      Applying a magnetometer configuration writes calibration values to the IMU and saves them to flash memory. Verify the calibration file contains correct values before applying it. Incorrect calibration can degrade magnetometer accuracy.
 
 ---
 
@@ -198,7 +199,7 @@ ros2 run magcal_wrapper mag_calibration_client
 ```
 
 Monitor real-time progress:
-```bash
+```
 Progress: 0.0% - Collecting samples (0/1000)
 Progress: 5.2% - Collecting samples (52/1000)
 ...
@@ -247,3 +248,5 @@ Progress: 100.0% - Calibration complete
 - High fit error indicates local magnetic disturbances during collection
 
 ---
+
+Next: [Debugging →](debug.md)
