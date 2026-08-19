@@ -1,15 +1,22 @@
 # InertialGate
 
-## 1. Description 
-InertialGate is a versatile IMU interface board designed for easy integration of OSCP Inertial Systems across multiple platforms. It can be used as an Evaluation Kit for our Inertial Systems. 
-
 <figure markdown="span">
   ![OSCP InertialGate board, top-down render](assets/images/inertial_gate_no_bg_render.png){ width=400 .transparent }
 </figure>
 
+??? info "Description"
+    InertialGate is a versatile IMU interface board designed for easy integration of OSCP Inertial Systems across multiple platforms. It can be used as an Evaluation Kit for our Inertial Systems. 
+
 ---
 
-## 2. Features 
+## 1. Revision
+
+!!! info "Revision"
+    This documentation tracks **REV03** (2026-04-06). See the [changelog](changelog.md) for revision history.
+
+---
+
+## 2. Features at a glance 
  - Support RS422 and CAN-FD variants
  - USB-C virtual COM port with RS422
  - Raspberry Pi HAT+ compatibility
@@ -155,8 +162,3 @@ InertialGate is delivered with a 3D-printed ABS enclosure. This enclosure is pro
 The enclosure uses a clip-based retention mechanism and can be removed easily without tools. To remove it, press simultaneously on both sides of the white area of the enclosure, specifically at the front of the unit near the connector, and gently pull the enclosure away from the board.
 
 Once the enclosure is removed, InertialGate can be used as a standard OEM board. In this configuration, it may be mounted in any orientation or location that best suits the integration requirements of the target system.
-
----
-
-!!! info "Revision"
-    This documentation tracks **REV03** (2026-04-06). See the [changelog](changelog.md) for revision history.
