@@ -99,8 +99,16 @@ nav:
 
   - IMU:
     - IMU/index.md
-#    - MKM2:
-#        - Install: MKM2/info.md
+    - MK2M2:
+      - Overview: IMU/MK2M2/overview.md
+      - Changelog: IMU/MK2M2/changelog.md
+    - MK2E2:      
+      - Overview: IMU/MK2E2/overview.md
+      - Changelog: IMU/MK2E2/changelog.md
+    - MK2Z: IMU/MK2Z/overview.md
+    - Common:
+      - Overview: IMU/Common/overview.md
+      - Changelog: IMU/Common/changelog.md
 
   - INS:
     - INS/index.md
