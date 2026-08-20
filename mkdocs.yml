@@ -130,7 +130,5 @@ nav:
         - Services: Integration/ROS2/services.md
         - Debugging: Integration/ROS2/debug.md
     - ArduPilot Driver:
-        - Integration/ArduPilot/index.md
-        - Installation: Integration/ArduPilot/install.md
-        - Initialization: Integration/ArduPilot/launch.md
-        - Setup & Config: Integration/ArduPilot/setup.md
+    - PX4 Driver:
+      - Integration/PX4/index.md

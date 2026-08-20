@@ -1,5 +1,11 @@
 # OSCP ROS2 Driver
 
+`oscp_ros2_driver` is a custom driver that integrates [OSCP IMU Products](https://www.oscp.com/technology) with ROS 2. It parses the OSCP data stream and publishes it on standard `sensor_msgs` topics for use by the wider ROS 2 ecosystem as well as custom messages, and includes serial communication handling along with sample launch files and parameter configurations for common setups.
+
+:material-github: [https://github.com/OSCPS/oscp_ros2_driver](https://github.com/OSCPS/oscp_ros2_driver){:target="_blank"}
+
+---
+
 ## ROS Architecture Overview 
 This documentation covers the OSCP ROS2 driver stack, including:
 
