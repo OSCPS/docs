@@ -8,17 +8,24 @@
 <div class="grid" markdown>
 
 <div markdown>
-Our most compact 11 degrees of freedom (DoF) unit — a MEMS-based IMU combining three gyroscope axes,
-three accelerometer axes, three TMR magnetometer axes and two inclinometer axes in a
-compact enclosure. Designed for small drones, robotics, autonomous
-rail and geospatial mapping, where volume and mass are the binding constraints.
 
-The gyroscope design improves fault tolerance and compensates for sensor drift over
-time, holding angular rate accuracy in demanding or harsh operating conditions.
+Our most compact 11 degrees of freedom (DoF) unit — a MEMS-based IMU combining three
+gyroscope axes, three accelerometer axes, three TMR magnetometer axes and two
+inclinometer axes in a compact enclosure. The gyroscope design improves fault
+tolerance and compensates for sensor drift over time, holding angular rate accuracy in
+demanding or harsh conditions.
 
 </div>
 
 ![MK2M2](assets/images/mk2m2_assembly.png){ .fit .transparent }
+
+</div>
+
+<div class="applications" markdown>
+
+**Applications**{ .specs-group }
+
+Small drones · Robotics · Autonomous rail · Geospatial mapping
 
 </div>
 

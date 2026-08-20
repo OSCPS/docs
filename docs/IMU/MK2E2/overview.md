@@ -8,18 +8,24 @@
 <div class="grid" markdown>
 
 <div markdown>
+
 Our most versatile 11 degrees of freedom (DoF) unit — an IMU pairing a precision
 optical gyroscope on the heading axis with three MEMS gyroscope axes, three
-accelerometer axes, three TMR magnetometer axes and two inclinometer axes. Designed
-for autonomous heavy machinery, precision agriculture, construction, aerospace,
-defense, UAVs and marine navigation.
-
-The optical gyroscope enhances stability, making the MK2E2 exceptionally resilient to
-thermal drift, mechanical vibrations and EMI, ensuring precise inertial sensing.
+accelerometer axes, three TMR magnetometer axes and two inclinometer axes. The optical
+gyroscope enhances stability, making the MK2E2 exceptionally resilient to thermal
+drift, mechanical vibrations and EMI.
 
 </div>
 
 ![MK2E2](assets/images/mk2e2_assembly.png){ .fit .transparent }
+
+</div>
+
+<div class="applications" markdown>
+
+**Applications**{ .specs-group }
+
+Autonomous heavy machinery · Precision agriculture · Construction · Aerospace · Defense · UAVs · Marine
 
 </div>
 
