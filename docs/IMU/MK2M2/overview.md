@@ -167,7 +167,7 @@ Shock
 
 !!! info "About vibration and shock"
     Units were tested unpowered and verified functional afterwards. These figures
-    describe what the unit survives, not its performance during exposu
+    describe what the unit survives, not its performance during exposure.
 ---
 
 ## Mechanical Drawings  
