@@ -1,6 +1,6 @@
 # Accessories
 
-Hardware that pairs with any MK2 unit, for bench evaluation, host interfacing and deployment.
+Hardware that pairs with any OSCP IMU, for bench evaluation, host interfacing and deployment.
 
 <div class="grid cards" markdown>
 

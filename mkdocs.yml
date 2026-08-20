@@ -36,6 +36,7 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+  - def_list
   - md_in_html
   - admonition
   - pymdownx.details
@@ -46,6 +47,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
+  - footnotes
 
 copyright: >
   Copyright &copy; 2026, OSCPS Motion Sensing Inc. All rights reserved.
@@ -108,27 +110,27 @@ nav:
   - Accessories:
     - Accessories/index.md
     - InertialGate:
-        - Manual: Accessories/InertialGate/manual.md
-        - Changelog: Accessories/InertialGate/changelog.md
+      - Manual: Accessories/InertialGate/manual.md
+      - Changelog: Accessories/InertialGate/changelog.md
     - MicroGate:
         - Manual: Accessories/MicroGate/manual.md
 
   - Integration: 
     - Integration/index.md
     - C Library:
-        - Integration/C-Library/index.md
-        - Integration Paths: Integration/C-Library/transports.md
-        - Frame Reference: Integration/C-Library/frames.md
-        - Command Reference: Integration/C-Library/commands.md
-        - API Reference: Integration/C-Library/api.md
-        - Examples: Integration/C-Library/examples.md
+      - Integration/C-Library/index.md
+      - Integration Paths: Integration/C-Library/transports.md
+      - Frame Reference: Integration/C-Library/frames.md
+      - Command Reference: Integration/C-Library/commands.md
+      - API Reference: Integration/C-Library/api.md
+      - Examples: Integration/C-Library/examples.md
     - ROS2 Driver: 
-        - Integration/ROS2/index.md
-        - Installation: Integration/ROS2/install.md
-        - Setup & Config: Integration/ROS2/setup.md
-        - Launch & Usage: Integration/ROS2/launch.md
-        - Services: Integration/ROS2/services.md
-        - Debugging: Integration/ROS2/debug.md
+      - Integration/ROS2/index.md
+      - Installation: Integration/ROS2/install.md
+      - Setup & Config: Integration/ROS2/setup.md
+      - Launch & Usage: Integration/ROS2/launch.md
+      - Services: Integration/ROS2/services.md
+      - Debugging: Integration/ROS2/debug.md
     - ArduPilot Driver:
       - Integration/ArduPilot/index.md
       - Installation: Integration/ArduPilot/install.md

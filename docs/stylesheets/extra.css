@@ -1,3 +1,4 @@
+/* Handling non-transparent and transparent images with white background */
 .md-typeset figure img {
   background-color: #fff;
   border-radius: 12px;
@@ -16,4 +17,59 @@
 
 [data-md-color-scheme="slate"] .md-typeset figure img.transparent {
   box-shadow: none;
+}
+
+/* SVG Display */
+.md-typeset img.svg {
+  width: 100%;
+  max-width: 720px;      /* whatever suits the drawing */
+  height: auto;
+  display: block;
+  margin: 0 auto;        /* centred once the cap kicks in */
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+/* Specification blocks */
+.md-typeset .specs .specs-group {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--md-accent-fg-color);
+  margin: 2rem 0 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .specs .specs-group:first-child {
+  margin-top: 0.5rem;
+}
+
+.md-typeset .specs dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 0 0 1rem;
+  font-size: 0.68rem;
+}
+
+.md-typeset .specs dl dt,
+.md-typeset .specs dl dd {
+  margin: 0;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .specs dl dt {
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .specs dl dd {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  padding-left: 2rem;
 }
