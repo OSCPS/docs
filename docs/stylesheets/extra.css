@@ -73,3 +73,26 @@
   white-space: nowrap;
   padding-left: 2rem;
 }
+
+/* Application strip under the product intro */
+.md-typeset .applications {
+  margin: 1.5rem 0 2rem;
+}
+
+.md-typeset .applications .specs-group {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--md-accent-fg-color);
+  margin: 0 0 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .applications p:last-child {
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+}

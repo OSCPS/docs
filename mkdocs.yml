@@ -105,7 +105,9 @@ nav:
     - MK2E2:      
       - Overview: IMU/MK2E2/overview.md
       - Changelog: IMU/MK2E2/changelog.md
-    - MK2Z: IMU/MK2Z/overview.md
+    - MK2Z:
+      - Overview: IMU/MK2Z/overview.md
+      - Changelog: IMU/MK2Z/changelog.md
     - Common:
       - Overview: IMU/Common/overview.md
       - Changelog: IMU/Common/changelog.md
