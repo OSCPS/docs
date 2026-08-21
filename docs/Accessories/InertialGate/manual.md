@@ -1,7 +1,7 @@
 # InertialGate
 
 !!! info "Revision"
-    This documentation tracks **REV03** (2026-04-06) and is preliminary — content is
+    This documentation tracks **REV04** (2026-08-21) and is preliminary — content is
     subject to change without notice. See the [changelog](changelog.md) for revision
     history.
 
