@@ -259,12 +259,8 @@ by a vehicle bus or by any external CAN-FD node rather than by the onboard contr
  
 The differential pair coming from the IMU is available on the **centre pin** of the
 protocol-selection jumpers described in [Section 3](#3-imu-protocol-configuration):
- 
-| Signal | Access point |
-| ------ | ------------ |
-| CANH   | Centre pin of **J1** |
-| CANL   | Centre pin of **J2** |
- 
+**CANH** on **J1** and **CANL** on **J2**.
+
 <figure markdown="span">
   ![CANH and CANL access on the centre pins of J1 and J2](assets/images/can_bus_tap.png)
 </figure>
