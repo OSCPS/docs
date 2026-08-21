@@ -152,6 +152,7 @@ The simplest method is to connect InertialGate directly to a laptop via the USB-
 Data can also be accessed via the 40-pin female header through jumper wires. This is used in standalone setups or when InertialGate is stacked on a Raspberry Pi. Pinout details are shown below, where GND is the third pin from the top left, TX the fourth, RX the fifth.
 
 When stacked on a RPi, the UART0 peripheral is used and must be enabled by adding the following overlay to `/boot/firmware/config.txt`:
+
 ```bash
 dtoverlay=uart0
 ```
@@ -162,16 +163,134 @@ After saving and rebooting, the IMU data stream will be available on `/dev/ttyAM
 </figure>
 
 #### 6.1.3. Direct UART Pins
-Three male headers (**J4**) provide access to TX, RX and GND signals at the bottom of InertialGate. This allows connection to a custom system, using the pinout shown above.
+Three male headers (**J4**) provide access to TX, RX and GND signals at the bottom of InertialGate in standalone mode. This allows connection to a custom system, using the pinout shown above. Power cannot be provided via USB-C for this configuration, without custom tweaks.
+
+!!! warning "TX and RX Are Named From the Host Point of View"
+
+    The **TX** and **RX** labels follow the point of view of the host system, not of
+    InertialGate. The lines must therefore be wired **straight through, not crossed**:
+
+    | J4 pin | Signal direction | Connect to |
+    | ------ | ---------------- | ---------- |
+    | TX | Input to InertialGate, carries data toward the IMU | TX of the custom system |
+    | RX | Output from InertialGate, carries the IMU data stream | RX of the custom system |
+    | GND | — | GND of the custom system |
 
 ### 6.2. CAN-FD Variant
-!!! info  "Next Revision of the User Manual"
 
-    This section will be refined in the next revision of the User Manual.
+With jumpers set to CAN-FD (see [Section 3.2](#32-can-fd-imu-variant)), the differential
+pair coming from the IMU connector is routed to the onboard **MCP251863** CAN-FD
+controller and transceiver. The controller is clocked by a dedicated 20 MHz crystal and
+communicates with the host over **SPI**, which means that on the CAN-FD variant
+InertialGate acts as a CAN-FD-to-SPI bridge rather than as a passive level translator.
+ 
+Two options are available to access the data: through the 40-pin header (SPI, typically
+with InertialGate stacked on a Raspberry Pi), or by tapping the differential bus itself at
+the protocol-selection jumpers, which lets the IMU join an existing CAN-FD network.
+
+!!! info "No Data Over USB-C On CAN-FD Units"
+ 
+    The USB-C port and its _FTDI FT232HL_ virtual COM port only serve the RS422 signal
+    path. On a CAN-FD unit, USB-C can still be used to power the board
+    [(Section 4.1)](#41-via-usb-c), but the IMU data stream is **not** available on the
+    virtual COM port.
+ 
+The signals used by the CAN-FD path are summarized below.
+ 
+| MCP251863 signal | Raspberry Pi GPIO | 40-pin header |
+| ---------------- | ----------------- | ------------- |
+| SCK              | GPIO11 (SPI0 SCLK) | 23           |
+| SDI              | GPIO10 (SPI0 MOSI) | 19           |
+| SDO              | GPIO9 (SPI0 MISO)  | 21           |
+| nCS              | GPIO8 (SPI0 CE0)   | 24           |
+| nINT             | GPIO17             | 11           |
+| nINT1            | GPIO27             | 13           |
 
 #### 6.2.1. 40-Pin Header
-#### 6.2.2. Direct CAN Pins
 
+When InertialGate is stacked on a Raspberry Pi (or wired to one through the 40-pin female
+header), the CAN-FD controller is reached over SPI0 with chip select CE0. The kernel driver
+`mcp251xfd` is used; it is included in Raspberry Pi OS and only needs to be instantiated
+through a device tree overlay.
+ 
+Add the following line to `/boot/firmware/config.txt`:
+ 
+```bash
+dtoverlay=mcp251xfd,spi0-0,oscillator=20000000,speed=20000000,interrupt=17,rx_interrupt=27
+```
+ 
+The parameters map directly to the hardware:
+ 
+- `spi0-0` — SPI0, chip select 0, as wired on the board.
+- `oscillator=20000000` — the 20 MHz crystal dedicated to the CAN controller.
+- `speed=20000000` — SPI clock, 20 MHz.
+- `interrupt=17` — main interrupt line (nINT) on GPIO17.
+- `rx_interrupt=27` — receive interrupt line (nINT1) on GPIO27.
+
+Save the file and reboot. Then bring the interface up with the bit timing used by OSCP IMUs:
+ 
+```bash
+sudo ip link set can0 up type can \
+    bitrate 1000000 sample-point 0.96 \
+    dbitrate 1000000 dsample-point 0.52 fd on
+```
+
+The IMU data stream can then be read with the `can-utils` package:
+ 
+```bash
+sudo apt install can-utils
+candump can0
+```
+
+To reconfigure the interface, bring it down first with
+`sudo ip link set can0 down`.
+ 
+!!! tip "Persisting The Interface Configuration"
+ 
+    The `ip link` command does not survive a reboot. On a permanent installation, the
+    interface should be configured through the network management stack of the host
+    distribution (for example a `systemd-networkd` link file) so that `can0` is brought up
+    automatically at boot.
+
+#### 6.2.2. Connecting To An External CAN Bus
+ 
+InertialGate can also be inserted into an existing CAN-FD network, so that the IMU is read
+by a vehicle bus or by any external CAN-FD node rather than by the onboard controller.
+ 
+The differential pair coming from the IMU is available on the **centre pin** of the
+protocol-selection jumpers described in [Section 3](#3-imu-protocol-configuration):
+ 
+| Signal | Access point |
+| ------ | ------------ |
+| CANH   | Centre pin of **J1** |
+| CANL   | Centre pin of **J2** |
+ 
+<figure markdown="span">
+  ![CANH and CANL access on the centre pins of J1 and J2](assets/images/can_bus_tap.png)
+</figure>
+ 
+**Jumpers installed in the CAN position.** The IMU, the onboard MCP251863 and the external
+network all share the same bus. The Raspberry Pi can keep reading the IMU through
+[Section 6.2.1](#621-40-pin-header) while the external node receives the same traffic. The
+onboard termination remains connected, so InertialGate acts as one terminated end of the
+bus.
+ 
+**Jumpers removed.** The IMU pair is isolated from the onboard transceiver and is carried
+straight from the two centre pins to the external network. The onboard controller is no
+longer on the bus, and the onboard termination is out of circuit.
+ 
+!!! warning "Bus Termination"
+ 
+    InertialGate implements a split termination network on the transceiver side of J1 and
+    J2. With the jumpers installed, the board terminates one end of the bus. With the jumpers
+    removed, InertialGate provides no termination at all.
+ 
+#### 6.2.3. Debug Header
+ 
+Header **J5** exposes the TXD and RXD lines running between the MCP2518FD controller and
+its transceiver. It is provided only for observing traffic during integration and debugging,
+for example with a logic analyzer.
+ 
 ---
 
 ## 7. Reset an OSCP IMU
