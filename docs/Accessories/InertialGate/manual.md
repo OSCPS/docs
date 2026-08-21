@@ -186,7 +186,7 @@ InertialGate acts as a CAN-FD-to-SPI bridge rather than as a passive level trans
  
 Two options are available to access the data: through the 40-pin header (SPI, typically
 with InertialGate stacked on a Raspberry Pi), or by tapping the differential bus itself at
-the protocol-selection jumpers, which lets the IMU join an existing CAN-FD network.
+the protocol-selection jumpers, which lets the IMU join an existing CAN-FD network. A third header is provided for debugging only.
 
 !!! info "No Data Over USB-C On CAN-FD Units"
  
