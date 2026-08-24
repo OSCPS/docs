@@ -185,8 +185,8 @@ Immunity
 
 **Vibration & Shock**{ .specs-group }
 
-Sine sweep
-:   20–2000 Hz up to 8 g peak, all three axes
+Vibration
+:   Sine sweep 20–2000 Hz up to 8 g peak, all three axes
 
 Shock
 :   Half-sine up to 40 g peak, 11 ms, all three axes
