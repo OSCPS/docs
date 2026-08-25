@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
-   sodipodi:docname="mk2e2_functional_block_diagram.svg"
+   sodipodi:docname="mk2e2_no_g_functional_block_diagram.svg"
    inkscape:export-filename="mk2m2_functional_block_diagram.png"
    inkscape:export-xdpi="500"
    inkscape:export-ydpi="500"
@@ -29,11 +29,11 @@
      showguides="true"
      inkscape:zoom="2.4864921"
      inkscape:cx="232.456"
-     inkscape:cy="110.1954"
+     inkscape:cy="109.99432"
      inkscape:window-width="1920"
-     inkscape:window-height="1027"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="30"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -67,7 +67,7 @@
        inkscape:export-ydpi="96" />
     <g
        id="g86"
-       transform="translate(2.9063434,-7.4276814)"
+       transform="translate(2.9063434,-4.7818479)"
        style="stroke-width:0.3;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -91,7 +91,7 @@
     </g>
     <g
        id="g87"
-       transform="translate(2.9277019,0.26425059)"
+       transform="translate(2.9277019,3.7220564)"
        style="stroke-width:0.3;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -115,7 +115,7 @@
     </g>
     <g
        id="g88"
-       transform="translate(2.8167705,0.39204643)"
+       transform="translate(2.8167705,4.2558384)"
        style="stroke-width:0.3;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -139,7 +139,7 @@
     </g>
     <g
        id="g89"
-       transform="translate(2.8167705,0.51363193)"
+       transform="translate(2.8167705,4.78341)"
        style="stroke-width:0.3;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -160,30 +160,6 @@
            x="39.866554"
            y="158.64857"
            id="tspan71-90">3-Axis AMR Mag</tspan></text>
-    </g>
-    <g
-       id="g90"
-       transform="translate(2.9339046,0.34998489)"
-       style="stroke-width:0.3;stroke-dasharray:none">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1-5-4-2-90-9"
-         width="29.693571"
-         height="5.6935701"
-         x="-54.551048"
-         y="162.248"
-         transform="scale(-1,1)" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-         x="39.701443"
-         y="166.10834"
-         id="text8-2-3-9-1-7-3-7"><tspan
-           sodipodi:role="line"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rubik;-inkscape-font-specification:Rubik;stroke-width:0.3;stroke-dasharray:none"
-           x="39.701443"
-           y="166.10834"
-           id="tspan71-69">GNSS (Optional)</tspan></text>
     </g>
     <g
        id="g24"
@@ -256,9 +232,9 @@
        transform="matrix(0.99998058,0,0,1,-16.553028,28.503856)"><tspan
          x="91.698776"
          y="102.65833"
-         id="tspan5"><tspan
+         id="tspan6"><tspan
            style="font-family:Outfit;-inkscape-font-specification:'Outfit Bold'"
-           id="tspan1">MK2E2</tspan></tspan></text>
+           id="tspan2">MK2E2</tspan></tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1-5-4-2"
@@ -561,11 +537,11 @@
          y="138.133">2</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.567291,128.83679 h 3.70311"
+       d="m 57.567291,131.48264 h 3.70311"
        id="path63-3-6" />
     <g
        id="g86-8"
-       transform="translate(2.9063434,-0.10608369)"
+       transform="translate(2.9063434,2.945736)"
        style="stroke-width:0.3;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -589,27 +565,23 @@
     </g>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.549064,136.15838 h 3.70311"
+       d="m 57.549064,139.2102 h 3.70311"
        id="path63-3-6-0" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.567291,143.47998 h 3.70311"
+       d="m 57.567291,146.93778 h 3.70311"
        id="path63-3-4" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.567291,150.80158 h 3.70311"
+       d="m 57.567291,154.66537 h 3.70311"
        id="path63-3-1" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.567291,158.12317 h 3.70311"
+       d="m 57.567291,162.39295 h 3.70311"
        id="path63-3-0" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.567291,165.44477 h 3.70311"
-       id="path63-3-0-7" />
     <g
        id="g90-0"
-       transform="translate(2.9339046,7.6715826)"
+       transform="translate(2.9339046,5.0257491)"
        style="stroke-width:0.3;stroke-dasharray:none">
       <rect
          style="fill:none;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -633,7 +605,7 @@
     </g>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.7;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
-       d="m 57.585941,172.76637 h 3.70311"
+       d="m 57.585941,170.12052 h 3.70311"
        id="path63-3-0-7-5" />
     <g
        id="g83"
