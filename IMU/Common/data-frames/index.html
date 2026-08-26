@@ -1,0 +1,5143 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.oscp.com/IMU/Common/data-frames/">
+      
+      
+        <link rel="prev" href="../parameters-electrical/">
+      
+      
+        <link rel="next" href="../commands/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/oscp-profil-primary.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Data & Frames - OSCP Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/oscp-table.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-0RSWELWLCK"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-0RSWELWLCK",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-0RSWELWLCK",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-frames" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://www.oscp.com" title="OSCP Documentation" class="md-header__button md-logo" aria-label="OSCP Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/oscp-emblem-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OSCP Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data & Frames
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  IMU
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../INS/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  INS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Accessories/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Accessories
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Integration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Integration
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.oscp.com" title="OSCP Documentation" class="md-nav__button md-logo" aria-label="OSCP Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/oscp-emblem-white.svg" alt="logo">
+
+    </a>
+    OSCP Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMU
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IMU
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MK2M2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MK2M2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MK2M2/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MK2M2/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MK2E2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MK2E2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MK2E2/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MK2E2/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MK2Z
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MK2Z
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MK2Z/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MK2Z/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Manual
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Common Manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters-electrical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters & Electrical
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Frames
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Frames
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-protocol-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Protocol Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup Frame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating Frames
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frame-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-frame-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw Frame (R)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler-angles-frame-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler Angles Frame (E)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternions-frame-q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternions Frame (Q)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-matrix-frame-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation Matrix Frame (M)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-frame-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Frame (G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-frame-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Frame (D)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-imu-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using IMU Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using IMU Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rs422-frame-decoding-encoding-cobs-consistent-overhead-byte-stuffing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RS422 Frame Decoding &amp; Encoding - COBS (Consistent Overhead Byte Stuffing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrity-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrity Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operating-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled-frame-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabled Frame Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misalignment-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misalignment Correction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timestamp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mems-gyroscope-dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEMS Gyroscope Dynamic Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mems-gyroscope-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEMS Gyroscope Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accelerometer-dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accelerometer Dynamic Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accelerometer-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accelerometer Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inclinometer-dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclinometer Dynamic Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ahrs-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AHRS Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imu-temperature-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMU Temperature Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler Angles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-fix-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Fix Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-last-correction-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Last Correction Age
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Byte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../INS/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    INS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Accessories/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accessories
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accessories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InertialGate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    InertialGate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accessories/InertialGate/manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accessories/InertialGate/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroGate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroGate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Accessories/MicroGate/manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Integration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Integration/C-Library/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C Library
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C Library
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/C-Library/transports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Paths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/C-Library/frames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frame Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/C-Library/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/C-Library/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/C-Library/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Integration/ROS2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS2 Driver
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ROS2 Driver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ROS2/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ROS2/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup & Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ROS2/launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch & Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ROS2/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ROS2/debug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Integration/ArduPilot/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArduPilot Driver
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ArduPilot Driver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ArduPilot/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ArduPilot/launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initialization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Integration/ArduPilot/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup & Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Integration/PX4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PX4 Driver
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PX4 Driver
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-protocol-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Protocol Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Startup Frame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating Frames
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operating Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frame-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-frame-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw Frame (R)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler-angles-frame-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler Angles Frame (E)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternions-frame-q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternions Frame (Q)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-matrix-frame-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation Matrix Frame (M)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-frame-g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Frame (G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-frame-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Frame (D)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-imu-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using IMU Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using IMU Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rs422-frame-decoding-encoding-cobs-consistent-overhead-byte-stuffing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RS422 Frame Decoding &amp; Encoding - COBS (Consistent Overhead Byte Stuffing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrity-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrity Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operating-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabled-frame-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabled Frame Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misalignment-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misalignment Correction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timestamp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mems-gyroscope-dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEMS Gyroscope Dynamic Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mems-gyroscope-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEMS Gyroscope Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accelerometer-dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accelerometer Dynamic Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accelerometer-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accelerometer Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inclinometer-dynamic-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclinometer Dynamic Range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ahrs-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AHRS Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imu-temperature-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMU Temperature Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler Angles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-fix-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Fix Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss-last-correction-age" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS Last Correction Age
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-byte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Byte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    IMU
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Common Manual
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="data-frames">Data &amp; Frames</h1>
+<div class="admonition tip">
+<p class="admonition-title">Basic Operation</p>
+<p>Each OSCP-MK2 IMU is easy to operate. The unit will start performing 11-DoF measurements and transmit Operating Frames on the output interface, with no additional configuration required after power-up.</p>
+</div>
+<p>The IMU can operate in 3 different Operating Modes: <strong>Idle</strong> (<em>I</em>), <strong>Low</strong> (<em>L</em>), <strong>Medium</strong> (<em>M</em>) Speed. Each mode is described in the table below; these figures are identical across the MK2 family.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Details of the MK2 IMU Family Operating Modes</strong></caption></p>
+<colgroup>
+<col style="width:65%">
+<col style="width:15%">
+<col style="width:15%">
+<col style="width:15%">
+</colgroup>
+<thead>
+<tr>
+<th>Features</th>
+<th>Idle</th>
+<th>Low</th>
+<th>Medium</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Startup Frame Length</td>
+<td colspan="3">40 bytes</td>
+</tr>
+<tr>
+<td class="text-left">Raw Operating Frame Length</td>
+<td colspan="3">61 bytes</td>
+</tr>
+<tr>
+<td class="text-left">Euler (AHRS) Operating Frame Length</td>
+<td colspan="3">25 bytes</td>
+</tr>
+<tr>
+<td class="text-left">Quaternion (AHRS) Operating Frame Length</td>
+<td colspan="3">29 bytes</td>
+</tr>
+<tr>
+<td class="text-left">Rot. Matrix (AHRS) Operating Frame Length</td>
+<td colspan="3">49 bytes</td>
+</tr>
+<tr>
+<td class="text-left">GNSS Operating Frame Length</td>
+<td colspan="3">64 bytes</td>
+</tr>
+<tr>
+<td class="text-left">Debug (User Configuration) Frames 1 &amp; 2 Length</td>
+<td colspan="3">58 bytes</td>
+</tr>
+<tr>
+<td class="text-left">Raw Operating Frame <strong>Output</strong> Data Rate</td>
+<td>0 Hz</td>
+<td>100 Hz</td>
+<td>500 Hz</td>
+</tr>
+<tr>
+<td class="text-left">AHRS Operating Frame <strong>Output</strong> Data Rate</td>
+<td>0 Hz</td>
+<td colspan="2">100 Hz</td>
+</tr>
+<tr>
+<td class="text-left">GNSS Operating Frame <strong>Output</strong> Data Rate</td>
+<td>0 Hz</td>
+<td colspan="2">1 Hz</td>
+</tr>
+<tr>
+<td class="text-left">Gyroscope <strong>Update</strong> Data Rate</td>
+<td>10 Hz</td>
+<td>100 Hz</td>
+<td>500 Hz</td>
+</tr>
+<tr>
+<td class="text-left">Accelerometer <strong>Update</strong> Data Rate</td>
+<td>10 Hz</td>
+<td>100 Hz</td>
+<td>500 Hz</td>
+</tr>
+<tr>
+<td class="text-left">Magnetometer <strong>Update</strong> Data Rate</td>
+<td>10 Hz</td>
+<td>100 Hz</td>
+<td>100 Hz</td>
+</tr>
+<tr>
+<td class="text-left">Inclinometer <strong>Update</strong> Data Rate</td>
+<td>10 Hz</td>
+<td>100 Hz</td>
+<td>500 Hz</td>
+</tr>
+<tr>
+<td class="text-left">Temperature <strong>Update</strong> Data Rate</td>
+<td colspan="3">4 Hz</td>
+</tr>
+<tr>
+<td class="text-left">GNSS <strong>Update</strong> Data Rate</td>
+<td colspan="3">1 Hz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-protocol-specifications">Output Protocol Specifications</h2>
+<p>The unit is available in two hardware configurations, supporting either RS422 or CAN-FD as the output protocol, referred to as variants. This is independent of the MK2M2 / MK2E2 model — each model is offered in both variants.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RS422 Variant</label><label for="__tabbed_1_2">CAN-FD Variant</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The RS422 interface operates at <strong>921600 baud</strong>, <strong>8 data bits</strong>, <strong>no parity</strong>, <strong>1 stop bit</strong> (8N1).</p>
+<div class="admonition info">
+<p class="admonition-title">COBS Decoding &amp; Encoding for the RS422 Variant</p>
+<p>All communication with the IMU in the RS422 variant uses <em>COBS</em> (<strong>Consistent Overhead Byte Stuffing</strong>) encoding. It is mandatory to use this encoding for any data exchanged with the unit. This is not the case for the CAN-FD variant.</p>
+<p>Please refer to <a href="#rs422-frame-decoding-encoding-cobs-consistent-overhead-byte-stuffing">RS422 Frame Decoding &amp; Encoding — COBS</a> below for decoding and encoding details, including guidance for C-based and Python-based platforms.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<p>The CAN-FD (Flexible Data-Rate) variant offers the following specifications:</p>
+<ul>
+<li><strong>Arbitration bitrate:</strong> 1 Mbps</li>
+<li><strong>Data bitrate:</strong> 1 Mbps</li>
+<li><strong>Sample-point:</strong> 0.96</li>
+<li><strong>Data sample-point:</strong> 0.52</li>
+<li><strong>Extended frame length:</strong> up to 64 bytes per frame</li>
+</ul>
+<p>The following CAN identifiers are used by the IMU to exchange data:</p>
+<ul>
+<li><strong>CAN Message IDs:</strong> 0x6F0 to 0x6FF<ul>
+<li><em>0x6F0</em>: Raw Operating Frame</li>
+<li><em>0x6F1</em>: Euler Angles Operating Frame</li>
+<li><em>0x6F2</em>: Quaternion Operating Frame</li>
+<li><em>0x6F3</em>: Rotation Matrix Operating Frame</li>
+<li><em>0x6F4</em>: GNSS Operating Frame</li>
+<li><em>0x6F5</em>: Debug Frame 1</li>
+<li><em>0x6F6</em>: Debug Frame 2</li>
+<li><em>0x6F7</em>: Startup Frame</li>
+<li><em>0x6FC</em>: Command from the User</li>
+<li><em>0x6FD</em>: ASCII Response from the IMU</li>
+</ul>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Setup for Linux-based systems</p>
+<p>For Linux-based systems, the <em>can0</em> interface can be configured with the following:</p>
+<div class="highlight"><pre><span></span><code>sudo ip link set can0 up type can bitrate 1000000 sample-point 0.96 dbitrate 1000000 dsample-point 0.52 fd on
+</code></pre></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Details for CAN-FD in Python</p>
+<p>In Python, the <a href="https://pypi.org/project/python-can/">python-can</a> package provides support for CAN-FD. As an example using OSCP InertialGate, the interface <em>slcan</em> can be used.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="state-diagram">State Diagram</h2>
+<p><img alt="IMU State Diagram" class="svg padded narrow" src="../assets/images/imu_state_diagram.svg" /></p>
+<h2 id="startup-frame">Startup Frame</h2>
+<p>After startup, the first frame sent by the IMU is a <strong>40-byte</strong> startup frame. It contains its current configuration, and can also be requested with a startup frame command when the IMU is in configuration state (see <a href="../commands/#get-a-startup-frame">Get a Startup Frame</a>). The description is given in the table below.</p>
+<table class="oscp-table" id="startup-frame-table">
+<p><caption><strong>Table: Full Description of a Startup Frame (S - <em>0b111</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b111</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1 - 10</td>
+<td class="text-center">Mark Number — fixed depending on model</td>
+<td>ASCII</td>
+</tr>
+<tr>
+<td>11 - 12</td>
+<td>Unit Number</td>
+<td>16-bit unsigned integer</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Software Major Version</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Software Minor Version</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Software Patch Version</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Enabled Frame Types</td>
+<td>See <a href="#enabled-frame-types">Enabled Frame Types</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Accelerometer Dynamic Range [7:4]<br>Gyroscope Dynamic Range [3:0]</td>
+<td>See <a href="#accelerometer-dynamic-range">Accelerometer Dynamic Range</a><br>See <a href="#gyroscope-dynamic-range">Gyroscope Dynamic Range</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Gyroscope High-Pass Filter [7:5]<br>Gyroscope Low-Pass Filter [4:2]<br>Gyroscope Filters [1:0]</td>
+<td>See <a href="#gyroscope-filters">Gyroscope Filters</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Accelerometer High-Pass Filter [7:5]<br>Accelerometer Low-Pass Filter [4:2]<br>Accelerometer Filters [1:0]</td>
+<td>See <a href="#accelerometer-filters">Accelerometer Filters</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>AHRS Heading Source [7:6]<br>AHRS Convention [5:4]<br>Inclinometer Dynamic Range [3:0]</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a><br>See <a href="#ahrs-configuration">AHRS Configuration</a><br>See <a href="#inclinometer-dynamic-range">Inclinometer Dynamic Range</a></td>
+</tr>
+<tr>
+<td>21 - 24</td>
+<td>AHRS Gain</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>25 - 28</td>
+<td>AHRS Acceleration Rejection</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>29 - 32</td>
+<td>AHRS Magnetic Rejection</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>33 - 36</td>
+<td>AHRS Recovery Trigger Period</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>37</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>38 - 39</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="operating-frames">Operating Frames</h2>
+<p>Once start-up has been completed, the IMU enters its main operating state and sends, at a given output data rate, the sensor readings in a frame that can contain <strong>61-byte</strong> (<em>R</em>), <strong>25-byte</strong> (<em>E</em>), <strong>29-byte</strong> (<em>Q</em>) or <strong>49-byte</strong> (<em>M</em>) depending on the type of frame selected. Optionally, a GNSS frame of <strong>64-byte</strong> (<em>G</em>) can be requested as well.</p>
+<p>Two <strong>58-byte</strong> Debug frames (<em>D</em>) are available to read back the current unit configuration.</p>
+<h3 id="frame-type">Frame Type</h3>
+<table class="oscp-table">
+<p><caption><strong>Table: Description of available Frame Types</strong></caption></p>
+<colgroup>
+<col style="width:16%">
+<col style="width:60%">
+<col style="width:24%">
+</colgroup>
+<thead>
+<tr>
+<th>Frame Type</th>
+<th>Description</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>R</em></td>
+<td>Raw Operating Frame</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td><em>E</em></td>
+<td>Euler Angles Operating Frame</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td><em>Q</em></td>
+<td>Quaternions Operating Frame</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td><em>M</em></td>
+<td>Rotation Matrix Operating Frame</td>
+<td><code>0b011</code></td>
+</tr>
+<tr>
+<td><em>G</em></td>
+<td>GNSS Operating Frame</td>
+<td><code>0b100</code></td>
+</tr>
+<tr>
+<td><em>D</em></td>
+<td>Debug Frame 1</td>
+<td><code>0b101</code></td>
+</tr>
+<tr>
+<td><em>D</em></td>
+<td>Debug Frame 2</td>
+<td><code>0b110</code></td>
+</tr>
+<tr>
+<td><em>S</em></td>
+<td>Startup Frame</td>
+<td><code>0b111</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="raw-frame-r">Raw Frame (R)</h3>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a Raw Operating Frame (R - <em>0b000</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b000</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 9</td>
+<td>Timestamp (<em>ms</em>)</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>10 - 13</td>
+<td>Gyroscope - x-axis (<em>°/sec</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>14 - 17</td>
+<td>Gyroscope - y-axis (<em>°/sec</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>18 - 21</td>
+<td>Gyroscope - z-axis (<em>°/sec</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>22 - 25</td>
+<td>Accelerometer - x-axis (<em>g</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>26 - 29</td>
+<td>Accelerometer - y-axis (<em>g</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>30 - 33</td>
+<td>Accelerometer - z-axis (<em>g</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>34 - 37</td>
+<td>Inclinometer - x-axis (<em>mg</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>38 - 41</td>
+<td>Inclinometer - y-axis (<em>mg</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>42 - 45</td>
+<td>Magnetometer - x-axis (<em>μT</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>46 - 49</td>
+<td>Magnetometer - y-axis (<em>μT</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>50 - 53</td>
+<td>Magnetometer - z-axis (<em>μT</em>)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>54 - 57</td>
+<td>IMU Temperature (<em>°C</em>)</td>
+<td>See <a href="#imu-temperature-data">IMU Temperature Data</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>59 - 60</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Variant note — z-axis gyroscope source (MK2E2 only)</p>
+<p>On the <strong>MK2E2</strong>, the gyroscope's <strong>z-axis</strong> output (bytes 18-21 above) is sourced from the unit's optical gyroscope when the measured rotation rate is below 250 °/sec. Above this threshold, the output automatically switches to the MEMS gyroscope to maintain accuracy up to the selected range. The <strong>MK2M2</strong> have no optical gyroscope, so their z-axis output always comes from the MEMS gyroscope.</p>
+</div>
+<h3 id="euler-angles-frame-e">Euler Angles Frame (E)</h3>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a Euler Angles Operating Frame (E - <em>0b001</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b001</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 9</td>
+<td>Timestamp (<em>ms</em>)</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>10 - 13</td>
+<td>Euler - Roll</td>
+<td>See <a href="#euler-angles">Euler Angles</a></td>
+</tr>
+<tr>
+<td>14 - 17</td>
+<td>Euler - Pitch</td>
+<td>See <a href="#euler-angles">Euler Angles</a></td>
+</tr>
+<tr>
+<td>18 - 21</td>
+<td>Euler - Yaw</td>
+<td>See <a href="#euler-angles">Euler Angles</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>23 - 24</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="quaternions-frame-q">Quaternions Frame (Q)</h3>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a Quaternions Operating Frame (Q - <em>0b010</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b010</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 9</td>
+<td>Timestamp (<em>ms</em>)</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>10 - 13</td>
+<td>Quaternion 0 - <em>w</em></td>
+<td>See <a href="#quaternions">Quaternions</a></td>
+</tr>
+<tr>
+<td>14 - 17</td>
+<td>Quaternion 1 - <em>x</em></td>
+<td>See <a href="#quaternions">Quaternions</a></td>
+</tr>
+<tr>
+<td>18 - 21</td>
+<td>Quaternion 2 - <em>y</em></td>
+<td>See <a href="#quaternions">Quaternions</a></td>
+</tr>
+<tr>
+<td>22 - 25</td>
+<td>Quaternion 3 - <em>z</em></td>
+<td>See <a href="#quaternions">Quaternions</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>27 - 28</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rotation-matrix-frame-m">Rotation Matrix Frame (M)</h3>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a Rotation Matrix Operating Frame (M - <em>0b011</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b011</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 9</td>
+<td>Timestamp (<em>ms</em>)</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>10 - 13</td>
+<td>Rotation Matrix M<sub>00</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>14 - 17</td>
+<td>Rotation Matrix M<sub>01</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>18 - 21</td>
+<td>Rotation Matrix M<sub>02</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>22 - 25</td>
+<td>Rotation Matrix M<sub>10</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>26 - 29</td>
+<td>Rotation Matrix M<sub>11</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>30 - 33</td>
+<td>Rotation Matrix M<sub>12</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>34 - 37</td>
+<td>Rotation Matrix M<sub>20</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>38 - 41</td>
+<td>Rotation Matrix M<sub>21</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>42 - 45</td>
+<td>Rotation Matrix M<sub>22</sub></td>
+<td>See <a href="#rotation-matrix">Rotation Matrix</a></td>
+</tr>
+<tr>
+<td>46</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>47 - 48</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gnss-frame-g">GNSS Frame (G)</h3>
+<div class="admonition warning">
+<p class="admonition-title">Variant note — GNSS Frame availability (-G variants only)</p>
+<p>The GNSS Operating Frame (G) is available only on <strong>-G</strong> variant units. It is being <strong>discontinued</strong> across the MK2 family in favor of the upcoming <strong>NavigationGate INS Module</strong>, which expands the OSCP product portfolio with integrated inertial-navigation capabilities, including GNSS-aided navigation and support for additional aiding sensors. For more information, contact us at <a href="mailto:info@oscp.com">info@oscp.com</a>.</p>
+</div>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a GNSS Operating Frame (G - <em>0b100</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b100</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 9</td>
+<td>Timestamp (<em>ms</em>)</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>10</td>
+<td>GNSS Fix Type</td>
+<td>See <a href="#gnss-fix-type">GNSS Fix Type</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Number of satellites used</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr>
+<td>12 - 15</td>
+<td>Longitude (°)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>16 - 19</td>
+<td>Latitude (°)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>20 - 23</td>
+<td>Height above ellipsoid (<em>mm</em>)</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr>
+<td>24 - 27</td>
+<td>Horizontal accuracy estimate (<em>mm</em>)</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr>
+<td>28 - 31</td>
+<td>Vertical accuracy estimate (<em>mm</em>)</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr>
+<td>32 - 35</td>
+<td>Velocity North (<em>mm/sec</em>) [NED Frame]</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr>
+<td>36 - 39</td>
+<td>Velocity East (<em>mm/sec</em>) [NED Frame]</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr>
+<td>40 - 43</td>
+<td>Velocity Down (<em>mm/sec</em>) [NED Frame]</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr>
+<td>44 - 47</td>
+<td>Speed Accuracy Estimate (<em>mm/sec</em>)</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr>
+<td>48 - 51</td>
+<td>Heading of Motion (°) [2D]</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>52 - 55</td>
+<td>Heading Accuracy Estimate (°)</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>56 - 59</td>
+<td>Position DOP</td>
+<td>float32</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Last Correction Age [7:4]<br>RESERVED [3:2]<br>Invalid LLH [1]<br>GNSS Fix OK [0]</td>
+<td>See <a href="#gnss-last-correction-age">GNSS Last Correction Age</a><br>-<br>-<br>-</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>62 - 63</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug-frame-d">Debug Frame (D)</h3>
+<p>The Debug Frame consists of two consecutive frames.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a Debug Frame 1 (D - <em>0b101</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b101</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 5</td>
+<td>Gyroscope X Bias — GXB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>6 - 9</td>
+<td>Gyroscope Y Bias — GYB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>10 - 13</td>
+<td>Gyroscope Z Bias — GZB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>14 - 17</td>
+<td><strong>MK2E2:</strong> Optical Gyroscope Z Bias — GOB<br><strong>MK2M2:</strong> RESERVED</td>
+<td>See <a href="#user-calibration">User Calibration</a><br>–</td>
+</tr>
+<tr>
+<td>18 - 21</td>
+<td>Accelerometer X Bias — AXB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>22 - 25</td>
+<td>Accelerometer Y Bias — AYB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>26 - 29</td>
+<td>Accelerometer Z Bias — AZB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>30 - 33</td>
+<td>Inclinometer X Bias — IXB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>34 - 37</td>
+<td>Inclinometer Y Bias — IYB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>38 - 41</td>
+<td>Magnetometer X Hard Iron — MXB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>42 - 45</td>
+<td>Magnetometer Y Hard Iron — MYB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>46 - 49</td>
+<td>Magnetometer Z Hard Iron — MZB</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>50</td>
+<td>Gyroscope High-Pass Filter [7:5]<br>Gyroscope Low-Pass Filter [4:2]<br>Gyroscope Filters [1:0]</td>
+<td>See <a href="#gyroscope-filters">Gyroscope Filters</a></td>
+</tr>
+<tr>
+<td>51</td>
+<td>Accelerometer High-Pass Filter [7:5]<br>Accelerometer Low-Pass Filter [4:2]<br>Accelerometer Filters [1:0]</td>
+<td>See <a href="#accelerometer-filters">Accelerometer Filters</a></td>
+</tr>
+<tr>
+<td>52 - 54</td>
+<td>RESERVED</td>
+<td>-</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>56 - 57</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Variant note — GOB register (MK2E2 only)</p>
+<p>Bytes 14-17 of Debug Frame 1 carry the <strong>Optical Gyroscope Z Bias (GOB)</strong> register on the <strong>MK2E2</strong> only, since it's the only model with an optical gyroscope. On the <strong>MK2M2</strong>, these bytes are RESERVED. See <a href="#user-calibration">User Calibration</a> for the full register list.</p>
+</div>
+<table class="oscp-table">
+<p><caption><strong>Table: Full Description of a Debug Frame 2 (D - <em>0b110</em>)</strong></caption></p>
+<colgroup>
+<col style="width:12%">
+<col style="width:56%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Byte #</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Misalignment Correction [7:6]<br>Operating Mode [5:3]<br>Frame Type [2:0] = 0b110</td>
+<td>See <a href="#misalignment-correction">Misalignment Correction</a><br>See <a href="#operating-mode">Operating Mode</a><br>See <a href="#frame-type">Frame Type</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Frame Counter</td>
+<td>See <a href="#frame-counter">Frame Counter</a></td>
+</tr>
+<tr>
+<td>2 - 5</td>
+<td>Magnetometer XX Soft Iron — MXX</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>6 - 9</td>
+<td>Magnetometer YX Soft Iron — MYX</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>10 - 13</td>
+<td>Magnetometer ZX Soft Iron — MZX</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>14 - 17</td>
+<td>Magnetometer XY Soft Iron — MXY</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>18 - 21</td>
+<td>Magnetometer YY Soft Iron — MYY</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>22 - 25</td>
+<td>Magnetometer ZY Soft Iron — MZY</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>26 - 29</td>
+<td>Magnetometer XZ Soft Iron — MXZ</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>30 - 33</td>
+<td>Magnetometer YZ Soft Iron — MYZ</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>34 - 37</td>
+<td>Magnetometer ZZ Soft Iron — MZZ</td>
+<td>See <a href="#user-calibration">User Calibration</a></td>
+</tr>
+<tr>
+<td>38 - 41</td>
+<td>AHRS Gain</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>42 - 45</td>
+<td>AHRS Acceleration Rejection</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>46 - 49</td>
+<td>AHRS Magnetic Rejection</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>50 - 53</td>
+<td>AHRS Recovery Trigger Period</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>54</td>
+<td>AHRS Heading Source [7:4]<br>AHRS Convention [3:0]</td>
+<td>See <a href="#ahrs-configuration">AHRS Configuration</a></td>
+</tr>
+<tr>
+<td>55</td>
+<td>Status Byte</td>
+<td>See <a href="#status-byte">Status Byte</a></td>
+</tr>
+<tr>
+<td>56 - 57</td>
+<td>Cyclic Redundancy Check (CRC-16)</td>
+<td>See <a href="#integrity-verification">Integrity Verification</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-imu-data">Using IMU Data</h2>
+<p>This section presents a more advanced description of some of the fields present in both the <a href="#startup-frame">Startup Frame</a> and <a href="#operating-frames">Operating Frames</a> to exploit IMU output.</p>
+<h3 id="rs422-frame-decoding-encoding-cobs-consistent-overhead-byte-stuffing">RS422 Frame Decoding &amp; Encoding - COBS (Consistent Overhead Byte Stuffing)</h3>
+<p>All frames transmitted by the IMU in the RS422 variant are encoded using <em>COBS</em> (Consistent Overhead Byte Stuffing) to ensure reliable frame boundary detection. Each encoded frame is terminated with a <code>0x00</code> byte, which serves as the frame delimiter. Users must decode each frame using the <em>COBS</em> algorithm before interpreting the data. Any <code>0x00</code> byte received marks the end of a complete <em>COBS</em>-encoded frame and should not be included in the decoding process. This is not required for the CAN-FD variant.</p>
+<div class="admonition warning">
+<p class="admonition-title">COBS Encoding</p>
+<p>All commands or data sent to the IMU in the RS422 variant must also be <em>COBS</em>-encoded and terminated with a <code>0x00</code> byte. This ensures proper frame detection and parsing on the IMU side. Make sure to apply the same <em>COBS</em> encoding method when sending any configuration or control commands to the device in the RS422 variant.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Details for COBS Decoding and Encoding in C</p>
+<p>On C-based platforms, the <a href="https://github.com/cmcqueen/cobs-c">cobs-c</a> library can be used to decode and encode data frames. After detecting a <code>0x00</code> byte (frame delimiter), the preceding bytes can be decoded using the <code>cobs_decode()</code> function provided by the library to retrieve the original data. Similarly, any data to be sent to the IMU should be passed through <code>cobs_encode()</code> and followed by a <code>0x00</code> delimiter.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Details for COBS Decoding and Encoding in Python</p>
+<p>In Python, the <a href="https://pypi.org/project/cobs/">cobs</a> package provides <code>cobs.decode()</code> and <code>cobs.encode()</code> functions. Incoming data can be split on <code>0x00</code> and decoded, while outgoing commands should be <em>COBS</em>-encoded using <code>cobs.encode()</code>, with a <code>0x00</code> byte appended to the result before transmission.</p>
+</div>
+<hr />
+<h3 id="integrity-verification">Integrity Verification</h3>
+<p>Each type of frame contains a 16-bit Cyclic-Redundancy Check to verify the integrity of the data received and perform error-detection. The short 16-bit binary sequence, known as the CRC, is computed using the polynomial <strong>0xD175</strong> and sent with each block of data. Its "explicit + 1" form for computation is <strong>0x1A2EB</strong>. It has a hamming distance of <strong>4</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Cyclic Redundancy Check</p>
+<p>It's important to note that the CRC is calculated on the entire frame, without the CRC itself. Once calculated, the latter can be compared with the transmitted one to validate data integrity or reject the frame.</p>
+</div>
+<hr />
+<h3 id="operating-mode">Operating Mode</h3>
+<p>As the Operating Mode is encoded as a 3-bit unsigned integer, the table below shows the mapping between binary representation, ASCII and true value.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of IMU Operating Modes</strong></caption></p>
+<colgroup>
+<col style="width:34%">
+<col style="width:33%">
+<col style="width:33%">
+</colgroup>
+<thead>
+<tr>
+<th>True Value</th>
+<th>ASCII</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Idle</td>
+<td><em>I</em> (0x49)</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td class="text-left">Low Speed</td>
+<td><em>L</em> (0x4C)</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td class="text-left">Medium Speed</td>
+<td><em>M</em> (0x4D)</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td class="text-left">Reserved</td>
+<td>RESERVED</td>
+<td><code>0b011</code> to <code>0b111</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="enabled-frame-types">Enabled Frame Types</h3>
+<p>As the enabled frame types are encoded as an 8-bit unsigned integer, the table below shows the mapping between each bit (and its corresponding index) and the frame type. A value of <em>1</em> at position <em>N</em> indicates that frame with index <em>N</em> is enabled, while a value of <em>0</em> means disabled.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Enabled Frame Types</strong></caption></p>
+<colgroup>
+<col style="width:18%">
+<col style="width:50%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Enable Frame Type</th>
+<th>Description</th>
+<th>Binary (Index)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>R</em></td>
+<td>Enabling Raw Operating Frame</td>
+<td><code>0b00000001 (0)</code></td>
+</tr>
+<tr>
+<td><em>E</em></td>
+<td>Enabling Euler Angles Operating Frame</td>
+<td><code>0b00000010 (1)</code></td>
+</tr>
+<tr>
+<td><em>Q</em></td>
+<td>Enabling Quaternions Operating Frame</td>
+<td><code>0b00000100 (2)</code></td>
+</tr>
+<tr>
+<td><em>M</em></td>
+<td>Enabling Rotation Matrix Operating Frame</td>
+<td><code>0b00001000 (3)</code></td>
+</tr>
+<tr>
+<td><em>G</em></td>
+<td>Enabling GNSS Operating Frame</td>
+<td><code>0b00010000 (4)</code></td>
+</tr>
+<tr>
+<td>Reserved</td>
+<td>RESERVED</td>
+<td><code>0b11100000 (5-7)</code></td>
+</tr>
+</tbody>
+</table>
+<p>The table below gives some examples of the data format used.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Enabled Frame Type Data Format Examples</strong></caption></p>
+<colgroup>
+<col style="width:22%">
+<col style="width:18%">
+<col style="width:32%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>Enabled Frames</th>
+<th>Decimal</th>
+<th>Binary</th>
+<th>Indexes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>R</em> + <em>E</em></td>
+<td>3</td>
+<td><code>0b00000011</code></td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td><em>Q</em> + <em>G</em></td>
+<td>20</td>
+<td><code>0b00010100</code></td>
+<td>2, 4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="misalignment-correction">Misalignment Correction</h3>
+<p>This field shows whether the misalignment correction algorithm for the gyroscopes and accelerometers is active. A value of <em>0</em> means the correction is disabled, while a value of <em>1</em> means it is enabled. This helps confirm if the sensor data is being adjusted for any known misalignment.</p>
+<hr />
+<h3 id="frame-counter">Frame Counter</h3>
+<p>Frame Counter continuously counts transmitted frames. This counter is an unsigned 8-bit binary counter, with values in the <em>[0, 255]</em>. It automatically wraps around.</p>
+<hr />
+<h3 id="timestamp">Timestamp</h3>
+<p>The timestamp is transmitted directly within an Operating Frame of type <em>R</em>, <em>E</em>, <em>Q</em>, <em>M</em>, <em>G</em> with an unsigned 64-bit binary that can be read directly as the value in <code>ms</code>. It describes the time at which the frame is formed, relative to the last IMU power-up.</p>
+<hr />
+<h3 id="mems-gyroscope-dynamic-range">MEMS Gyroscope Dynamic Range</h3>
+<p>As the MEMS Gyroscope Dynamic Range is encoded as a 4-bit unsigned integer, the table below shows the mapping between binary representation, ASCII and true value. This register configures the <strong>MEMS gyroscopes</strong>; the MK2E2's optical gyroscope is not affected by it and has a fixed range.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of MEMS Gyroscope Dynamic Ranges</strong></caption></p>
+<colgroup>
+<col style="width:30%">
+<col style="width:42%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>True Value</th>
+<th>ASCII</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>± 250 °/sec</td>
+<td>0250 (0x30323530)</td>
+<td><code>0b0000</code></td>
+</tr>
+<tr>
+<td>± 4000 °/sec</td>
+<td>4000 (0x34303030)</td>
+<td><code>0b0001</code></td>
+</tr>
+<tr>
+<td>± 125 °/sec</td>
+<td>0125 (0x30313235)</td>
+<td><code>0b0010</code></td>
+</tr>
+<tr>
+<td>± 500 °/sec</td>
+<td>0500 (0x30353030)</td>
+<td><code>0b0100</code></td>
+</tr>
+<tr>
+<td>± 1000 °/sec</td>
+<td>1000 (0x31303030)</td>
+<td><code>0b1000</code></td>
+</tr>
+<tr>
+<td>± 2000 °/sec</td>
+<td>2000 (0x32303030)</td>
+<td><code>0b1100</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="mems-gyroscope-filters">MEMS Gyroscope Filters</h3>
+<p>The table below shows the MEMS Gyroscope Filters configuration mapping, and the one after it shows the MEMS Gyroscope Low-Pass mapping. <strong>Register IDs</strong> are <strong>GFI</strong> and <strong>GLP</strong> (see <a href="../commands/#write-user-calibration-register-ahrs-filters-configurations">Write User Calibration Register</a>).</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of MEMS Gyroscope Filters field</strong></caption></p>
+<colgroup>
+<col style="width:56%">
+<col style="width:20%">
+<col style="width:24%">
+</colgroup>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Filters disabled</td>
+<td>0</td>
+<td><code>0b00</code></td>
+</tr>
+<tr>
+<td class="text-left">Low-pass filter enable</td>
+<td>1</td>
+<td><code>0b01</code></td>
+</tr>
+<tr>
+<td class="text-left">High-pass filter enable</td>
+<td>2</td>
+<td><code>0b10</code></td>
+</tr>
+<tr>
+<td class="text-left">Low-pass and high-pass filters are enabled</td>
+<td>3</td>
+<td><code>0b11</code></td>
+</tr>
+</tbody>
+</table>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Gyroscope Low-Pass Filter field</strong></caption></p>
+<colgroup>
+<col style="width:46%">
+<col style="width:24%">
+<col style="width:30%">
+</colgroup>
+<thead>
+<tr>
+<th>Cutoff for Low - Medium ODR</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>33 Hz - 222 Hz</em></td>
+<td>0</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td><em>33 Hz - 186 Hz</em></td>
+<td>1</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td><em>33 Hz - 140 Hz</em></td>
+<td>2</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td><em>33 Hz - 260 Hz</em></td>
+<td>3</td>
+<td><code>0b011</code></td>
+</tr>
+<tr>
+<td><em>34 Hz - 96 Hz</em></td>
+<td>4</td>
+<td><code>0b100</code></td>
+</tr>
+<tr>
+<td><em>31 Hz - 49 Hz</em></td>
+<td>5</td>
+<td><code>0b101</code></td>
+</tr>
+<tr>
+<td><em>19 Hz - 25 Hz</em></td>
+<td>6</td>
+<td><code>0b110</code></td>
+</tr>
+<tr>
+<td><em>11.6 Hz - 12.6 Hz</em></td>
+<td>7</td>
+<td><code>0b111</code></td>
+</tr>
+</tbody>
+</table>
+<p>The table below shows the Gyroscope High-Pass mapping. <strong>Register ID</strong> is <strong>GHP</strong> (see <a href="../commands/#write-user-calibration-register-ahrs-filters-configurations">Write User Calibration Register</a>).</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Gyroscope High-Pass Filter field</strong></caption></p>
+<colgroup>
+<col style="width:40%">
+<col style="width:28%">
+<col style="width:32%">
+</colgroup>
+<thead>
+<tr>
+<th>Cutoff</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>16 mHz</em></td>
+<td>0</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td><em>65 mHz</em></td>
+<td>1</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td><em>260 mHz</em></td>
+<td>2</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td><em>1.04 Hz</em></td>
+<td>3</td>
+<td><code>0b011</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="accelerometer-dynamic-range">Accelerometer Dynamic Range</h3>
+<p>As the Accelerometer Dynamic Range is encoded as a 4-bit unsigned integer, the table below shows the mapping between binary representation, ASCII and true value.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Accelerometer Dynamic Ranges</strong></caption></p>
+<colgroup>
+<col style="width:34%">
+<col style="width:38%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>True Value</th>
+<th>ASCII</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>± 2 g</em></td>
+<td>02 (0x3032)</td>
+<td><code>0b0000</code></td>
+</tr>
+<tr>
+<td><em>± 16 g</em></td>
+<td>16 (0x3136)</td>
+<td><code>0b0001</code></td>
+</tr>
+<tr>
+<td><em>± 4 g</em></td>
+<td>04 (0x3034)</td>
+<td><code>0b0010</code></td>
+</tr>
+<tr>
+<td><em>± 8 g</em></td>
+<td>08 (0x3038)</td>
+<td><code>0b0011</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="accelerometer-filters">Accelerometer Filters</h3>
+<p>The table below shows the Accelerometer Filters configuration mapping. <strong>Register ID</strong> is <strong>AFI</strong> (see <a href="../commands/#write-user-calibration-register-ahrs-filters-configurations">Write User Calibration Register</a>).</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Accelerometer Filters field</strong></caption></p>
+<colgroup>
+<col style="width:50%">
+<col style="width:22%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Filters disabled</td>
+<td>0</td>
+<td><code>0b00</code></td>
+</tr>
+<tr>
+<td class="text-left">Low-pass filter enable</td>
+<td>1</td>
+<td><code>0b01</code></td>
+</tr>
+<tr>
+<td class="text-left">High-pass filter enable</td>
+<td>2</td>
+<td><code>0b10</code></td>
+</tr>
+</tbody>
+</table>
+<p>The table below shows the Accelerometer Low-Pass and High-Pass mapping. <strong>Register IDs</strong> are <strong>ALP</strong> and <strong>AHP</strong> (see <a href="../commands/#write-user-calibration-register-ahrs-filters-configurations">Write User Calibration Register</a>).</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Accelerometer Low-Pass and High-Pass Filters fields</strong></caption></p>
+<colgroup>
+<col style="width:46%">
+<col style="width:24%">
+<col style="width:30%">
+</colgroup>
+<thead>
+<tr>
+<th>Cutoff for Low - Medium ODR</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>26 Hz - 208.25 Hz</em></td>
+<td>0</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td><em>10.4 Hz - 83.3 Hz</em></td>
+<td>1</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td><em>5.2 Hz - 41.65 Hz</em></td>
+<td>2</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td><em>2.3 Hz - 18.5 Hz</em></td>
+<td>3</td>
+<td><code>0b011</code></td>
+</tr>
+<tr>
+<td><em>1.04 Hz - 8.33 Hz</em></td>
+<td>4</td>
+<td><code>0b100</code></td>
+</tr>
+<tr>
+<td><em>0.52 Hz - 4.17 Hz</em></td>
+<td>5</td>
+<td><code>0b101</code></td>
+</tr>
+<tr>
+<td><em>0.26 Hz - 2.08 Hz</em></td>
+<td>6</td>
+<td><code>0b110</code></td>
+</tr>
+<tr>
+<td><em>0.13 Hz - 1.04 Hz</em></td>
+<td>7</td>
+<td><code>0b111</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="inclinometer-dynamic-range">Inclinometer Dynamic Range</h3>
+<p>As the Inclinometer Dynamic Range is encoded as a 4-bit unsigned integer, the table below shows the mapping between binary representation, ASCII and true value.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Mapping of Inclinometer Dynamic Ranges</strong></caption></p>
+<colgroup>
+<col style="width:30%">
+<col style="width:42%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>True Value</th>
+<th>ASCII</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>± 0.5 g</em></td>
+<td>0.5 (0x302E35)</td>
+<td><code>0b0000</code></td>
+</tr>
+<tr>
+<td><em>± 3.0 g</em></td>
+<td>3.0 (0x332E30)</td>
+<td><code>0b0001</code></td>
+</tr>
+<tr>
+<td><em>± 1.0 g</em></td>
+<td>1.0 (0x312E30)</td>
+<td><code>0b0010</code></td>
+</tr>
+<tr>
+<td><em>± 2.0 g</em></td>
+<td>2.0 (0x322E30)</td>
+<td><code>0b0011</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="ahrs-configuration">AHRS Configuration</h3>
+<p>The AHRS configuration consists of six parameters that control the algorithm behind the AHRS frames (Euler, Rotation Matrix, Quaternions). The table below presents these parameters.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: AHRS Configuration Parameters</strong></caption></p>
+<colgroup>
+<col style="width:15%">
+<col style="width:15%">
+<col style="width:18%">
+<col style="width:52%">
+</colgroup>
+<thead>
+<tr>
+<th>Register ID</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCO</td>
+<td><em>Earth Axis Convention</em></td>
+<td>2-bit unsigned integer</td>
+<td class="text-left">0 : NWU, 1: ENU, 2: NED</td>
+</tr>
+<tr>
+<td>FHS</td>
+<td><em>Heading Source</em></td>
+<td>2-bit unsigned integer</td>
+<td class="text-left">0 : None, 1: Internal magnetometer, 2: RESERVED</td>
+</tr>
+<tr>
+<td>FGA</td>
+<td><em>Gain</em></td>
+<td>float32</td>
+<td class="text-left">Determines the influence of the gyroscope relative to other sensor. 0.5 by default.</td>
+</tr>
+<tr>
+<td>FAR</td>
+<td><em>Acceleration Rejection</em></td>
+<td>float32</td>
+<td class="text-left">Threshold (in degrees) used by the acceleration rejection feature. 10.0 deg by default.</td>
+</tr>
+<tr>
+<td>FMR</td>
+<td><em>Magnetic Rejection</em></td>
+<td>float32</td>
+<td class="text-left">Threshold (in degrees) used by the magnetic rejection feature. 10.0 deg by default.</td>
+</tr>
+<tr>
+<td>FRT</td>
+<td><em>Recovery Trigger Period</em></td>
+<td>32-bit unsigned integer</td>
+<td class="text-left">Acceleration and magnetic recovery trigger period (seconds). 5 sec by default.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="imu-temperature-data">IMU Temperature Data</h3>
+<p>This temperature value is best for observing relative changes in the thermal environment, since it represents a coarse temperature inside the IMU. The reading is simply encoded as a <em>float32</em> (also known as <em>FP32</em>) and can be read directly as the temperature in °C.</p>
+<p>The internal temperature is roughly 10 to 13°C higher than external temperature.</p>
+<hr />
+<h3 id="euler-angles">Euler Angles</h3>
+<p>Euler angles represent orientation as a sequence of three rotations about the principal axes. In the <em>ZYX</em> convention, the rotation is applied in the following order: yaw (<em>z</em>-axis), pitch (<em>y</em>-axis), and roll (<em>x</em>-axis). This format is intuitive and commonly used to express orientation in AHRS systems. However, Euler angles are susceptible to singularities such as gimbal lock, where two axes align and one degree of freedom is lost, potentially affecting stability in certain configurations.</p>
+<hr />
+<h3 id="quaternions">Quaternions</h3>
+<p>Quaternions offer a compact and singularity-free representation of 3D orientation using four components. Widely used in AHRS implementations, quaternions enable smooth and stable orientation tracking even during fast or complex motion. They are well-suited for sensor fusion and real-time computation but require conversion to Euler angles or rotation matrices for human interpretation. The order of the quaternions is (<em>w</em>, <em>x</em>, <em>y</em>, <em>z</em>).</p>
+<hr />
+<h3 id="rotation-matrix">Rotation Matrix</h3>
+<p>Rotation matrix is an alternative way to represent the orientation using a 3 × 3 orthonormal matrix that defines the transformation relative to a fixed coordinate system. While precise, they are more computationally intensive to maintain compared to quaternions.</p>
+<hr />
+<h3 id="gnss-fix-type">GNSS Fix Type</h3>
+<p>Each GNSS frame contains a GNSS fix type byte to indicate the health of the current navigation solution. This makes it easy to give a confidence level to the current data. The table below gives the mapping of the field.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Interpreting GNSS Fix Type Byte</strong></caption></p>
+<colgroup>
+<col style="width:50%">
+<col style="width:22%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>True Value</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">No GNSS Fix</td>
+<td>0</td>
+<td><code>0b000</code></td>
+</tr>
+<tr>
+<td class="text-left">Dead Reckoning Fix only</td>
+<td>1</td>
+<td><code>0b001</code></td>
+</tr>
+<tr>
+<td class="text-left">2D GNSS Fix</td>
+<td>2</td>
+<td><code>0b010</code></td>
+</tr>
+<tr>
+<td class="text-left">3D GNSS Fix</td>
+<td>3</td>
+<td><code>0b011</code></td>
+</tr>
+<tr>
+<td class="text-left">GNSS + Dead Reckoning Combined</td>
+<td>4</td>
+<td><code>0b100</code></td>
+</tr>
+<tr>
+<td class="text-left">Time Only Fix</td>
+<td>5</td>
+<td><code>0b101</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="gnss-last-correction-age">GNSS Last Correction Age</h3>
+<p>Each GNSS frame contains a last correction age field to indicate the age of the most recently received correction. The table below gives the mapping of the field.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: GNSS Last Correction Age Byte</strong></caption></p>
+<colgroup>
+<col style="width:54%">
+<col style="width:20%">
+<col style="width:26%">
+</colgroup>
+<thead>
+<tr>
+<th>Description</th>
+<th>Decimal</th>
+<th>Binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Not available</td>
+<td>0</td>
+<td><code>0b0000</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 0 and 1 second</td>
+<td>1</td>
+<td><code>0b0001</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 1 (inclusive) and 2 seconds</td>
+<td>2</td>
+<td><code>0b0010</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 2 (inclusive) and 5 seconds</td>
+<td>3</td>
+<td><code>0b0011</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 5 (inclusive) and 10 seconds</td>
+<td>4</td>
+<td><code>0b0100</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 10 (inclusive) and 15 seconds</td>
+<td>5</td>
+<td><code>0b0101</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 15 (inclusive) and 20 seconds</td>
+<td>6</td>
+<td><code>0b0110</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 20 (inclusive) and 30 seconds</td>
+<td>7</td>
+<td><code>0b0111</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 30 (inclusive) and 45 seconds</td>
+<td>8</td>
+<td><code>0b1000</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 45 (inclusive) and 60 seconds</td>
+<td>9</td>
+<td><code>0b1001</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 60 (inclusive) and 90 seconds</td>
+<td>10</td>
+<td><code>0b1010</code></td>
+</tr>
+<tr>
+<td class="text-left">Age between 90 (inclusive) and 120 seconds</td>
+<td>11</td>
+<td><code>0b1011</code></td>
+</tr>
+<tr>
+<td class="text-left">Age greater or equal than 120 seconds</td>
+<td>≥ 12</td>
+<td>≥ <code>0b1100</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="user-calibration">User Calibration</h3>
+<p>There are 20 registers — <strong>21 on the MK2E2</strong>, which adds the optical gyroscope's bias register — that allow users to adjust the calibration to match their specific setup. Each value is interpreted as a <em>float32</em> and transferred to and from the IMU using an 8-character hexadecimal representation of a 32-bit floating-point number.</p>
+<p>The exact registers available are the following:</p>
+<table class="oscp-table">
+<p><caption><strong>Table: User Calibration Registers</strong></caption></p>
+<colgroup>
+<col style="width:15%">
+<col style="width:85%">
+</colgroup>
+<thead>
+<tr>
+<th>Register ID</th>
+<th>Register Full Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GXB</td>
+<td><em>Gyroscope X Bias</em></td>
+</tr>
+<tr>
+<td>GYB</td>
+<td><em>Gyroscope Y Bias</em></td>
+</tr>
+<tr>
+<td>GZB</td>
+<td><em>Gyroscope Z Bias</em></td>
+</tr>
+<tr>
+<td>GOB</td>
+<td><em>Optical Gyroscope Z Bias</em> — <strong>MK2E2 only</strong></td>
+</tr>
+<tr>
+<td>AXB</td>
+<td><em>Accelerometer X Bias</em></td>
+</tr>
+<tr>
+<td>AYB</td>
+<td><em>Accelerometer Y Bias</em></td>
+</tr>
+<tr>
+<td>AZB</td>
+<td><em>Accelerometer Z Bias</em></td>
+</tr>
+<tr>
+<td>IXB</td>
+<td><em>Inclinometer X Bias</em></td>
+</tr>
+<tr>
+<td>IYB</td>
+<td><em>Inclinometer Y Bias</em></td>
+</tr>
+<tr>
+<td>MXB</td>
+<td><em>Magnetometer X Hard Iron</em></td>
+</tr>
+<tr>
+<td>MYB</td>
+<td><em>Magnetometer Y Hard Iron</em></td>
+</tr>
+<tr>
+<td>MZB</td>
+<td><em>Magnetometer Z Hard Iron</em></td>
+</tr>
+<tr>
+<td>MXX</td>
+<td><em>Magnetometer XX Soft Iron</em></td>
+</tr>
+<tr>
+<td>MYX</td>
+<td><em>Magnetometer YX Soft Iron</em></td>
+</tr>
+<tr>
+<td>MZX</td>
+<td><em>Magnetometer ZX Soft Iron</em></td>
+</tr>
+<tr>
+<td>MXY</td>
+<td><em>Magnetometer XY Soft Iron</em></td>
+</tr>
+<tr>
+<td>MYY</td>
+<td><em>Magnetometer YY Soft Iron</em></td>
+</tr>
+<tr>
+<td>MZY</td>
+<td><em>Magnetometer ZY Soft Iron</em></td>
+</tr>
+<tr>
+<td>MXZ</td>
+<td><em>Magnetometer XZ Soft Iron</em></td>
+</tr>
+<tr>
+<td>MYZ</td>
+<td><em>Magnetometer YZ Soft Iron</em></td>
+</tr>
+<tr>
+<td>MZZ</td>
+<td><em>Magnetometer ZZ Soft Iron</em></td>
+</tr>
+</tbody>
+</table>
+<p>All registers above, including <strong>GOB</strong>, are written the same way via the <code>WR</code> command (see <a href="../commands/#write-user-calibration-register-ahrs-filters-configurations">Write User Calibration Register</a>).</p>
+<p>Regarding the calibration biases, the correction follows the model below. For the gyroscope, accelerometer and inclinometer registers (including <strong>GOB</strong> on the MK2E2), it's a simple bias subtraction:</p>
+<blockquote>
+<p>sensor<sub>out</sub> = sensor<sub>cal</sub> − bias<sub>user</sub></p>
+</blockquote>
+<p>For magnetometer compensation, both hard-iron and soft-iron corrections are applied:</p>
+<blockquote>
+<p>mag<sub>out</sub> = M × (mag<sub>cal</sub> − mag<sub>bias</sub>)</p>
+</blockquote>
+<p>where <code>mag_bias</code> is the hard-iron bias vector (<strong>MXB</strong>, <strong>MYB</strong>, <strong>MZB</strong>), and <code>M</code> is the 3×3 soft-iron correction matrix built from the nine <strong>MXX</strong>–<strong>MZZ</strong> registers above:</p>
+<div class="highlight"><pre><span></span><code>    | MXX  MYX  MZX |
+M = | MXY  MYY  MZY |
+    | MXZ  MYZ  MZZ |
+</code></pre></div>
+<hr />
+<h3 id="status-byte">Status Byte</h3>
+<p>Each frame contains a status byte to indicate the health of the IMU and of the current readings. This byte is sticky, meaning that every time a new frame is formed, it is reset to <code>0x00</code>. This makes it easy to distinguish between persistent and temporary errors. The table below gives the meaning of each of the 8 bits. Note that a status byte of <code>0x00</code> indicates that everything is working fine.</p>
+<table class="oscp-table">
+<p><caption><strong>Table: Interpreting Status Byte</strong></caption></p>
+<colgroup>
+<col style="width:10%">
+<col style="width:62%">
+<col style="width:28%">
+</colgroup>
+<thead>
+<tr>
+<th>Bit #</th>
+<th>Description</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>OSCP IMU Overrun Error Bit</td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>1</td>
+<td>MEMS Sensors Error Bit</td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>2</td>
+<td>MEMS Inclinometer Error Bit</td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TMR Magnetometer Error Bit</td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Temperature Sensor Error Bit</td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GNSS Error Bit</td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>MK2E2:</strong> Optical Gyroscope Error Bit<br><strong>MK2M2:</strong> <em>Reserved for future use</em></td>
+<td>0: OK, 1: KO</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>Reserved for future use</em></td>
+<td>0: OK, 1: KO</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026, OSCPS Motion Sensing Inc. All rights reserved. <a href="#__consent">Change cookie settings.</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/one-silicon-chip-photonics/" target="_blank" rel="noopener" title="OSCP on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/OSCPS" target="_blank" rel="noopener" title="OSCP on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/@oscpsmotionsensinginc.4037" target="_blank" rel="noopener" title="OSCP on YouTube" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://x.com/onesiliconchip" target="_blank" rel="noopener" title="OSCP on X (formerly Twitter)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.facebook.com/profile.php?id=100042245063717" target="_blank" rel="noopener" title="OSCP on Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "content.code.copy", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
