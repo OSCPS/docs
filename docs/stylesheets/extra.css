@@ -30,6 +30,15 @@
   border-radius: 12px;
 }
 
+.md-typeset img.svg.padded {
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.md-typeset img.svg.narrow {
+  max-width: 400px;
+}
+
 /* Specification blocks */
 .md-typeset .specs .specs-group {
   display: block;
