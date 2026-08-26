@@ -1,6 +1,6 @@
 # Integration
 
-Ready-made software for talking to an OSCP IMU, so you don't have to implement the protocol yourself. Everything here builds on the same [common interface](../IMU/Common/manual.md) and works with any of our units.
+Ready-made software for talking to an OSCP IMU, so you don't have to implement the protocol yourself. Everything here builds on the same [common interface](../IMU/Common/index.md) and works with any of our units.
 
 <div class="grid cards" markdown>
 

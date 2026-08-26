@@ -33,6 +33,7 @@ theme:
     
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/oscp-table.css
 
 markdown_extensions:
   - attr_list
@@ -108,8 +109,11 @@ nav:
     - MK2Z:
       - Overview: IMU/MK2Z/overview.md
       - Changelog: IMU/MK2Z/changelog.md
-    - Common:
-      - Overview: IMU/Common/overview.md
+    - Common Manual:
+      - IMU/Common/index.md
+      - Parameters & Electrical: IMU/Common/parameters-electrical.md
+      - Data & Frames: IMU/Common/data-frames.md
+      - Commands: IMU/Common/commands.md
       - Changelog: IMU/Common/changelog.md
 
   - INS:

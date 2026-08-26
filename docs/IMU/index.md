@@ -1,6 +1,6 @@
 # IMU Product Family
 
-The MK2 family shares one common pinout, one common command set and one common data output format. Pick your unit below for the model-specific mechanical, footprint and performance information. Everything interface-related is on the shared [Common Manual](Common/manual.md) page.
+The MK2 family shares one common pinout, one common command set and one common data output format. Pick your unit below for the model-specific mechanical, footprint and performance information. Everything interface-related is on the shared [Common Manual](Common/index.md) page.
 
 <div class="grid cards" markdown>
 
@@ -16,7 +16,7 @@ The MK2 family shares one common pinout, one common command set and one common d
 
     Our highest-performance unit. Lowest bias instability and ARW of the family, for extended GNSS-denied navigation.
 
--   [__:material-connection: Common Manual__](Common/overview.md)
+-   [__:material-connection: Common Manual__](Common/index.md)
 
     Pinout, electrical interface, protocol, data frames and command set identical across every MK2 unit.
 
