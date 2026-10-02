@@ -138,7 +138,14 @@ nav:
       - Command Reference: Integration/C-Library/commands.md
       - API Reference: Integration/C-Library/api.md
       - Examples: Integration/C-Library/examples.md
-    - ROS2 Driver: 
+    - Rust Library:
+      - Integration/Rust-Library/index.md
+      - Integration Paths: Integration/Rust-Library/transports.md
+      - Frame Reference: Integration/Rust-Library/frames.md
+      - Command Reference: Integration/Rust-Library/commands.md
+      - API Reference: Integration/Rust-Library/api.md
+      - Examples: Integration/Rust-Library/examples.md
+    - ROS2 Driver:
       - Integration/ROS2/index.md
       - Installation: Integration/ROS2/install.md
       - Setup & Config: Integration/ROS2/setup.md
