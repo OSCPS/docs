@@ -1,5 +1,11 @@
 # Changelog
 
+### REV04 — 2026-11-06
+
+- Revised specifications for the optical gyroscope.
+
+---
+
 ### REV03 — 2026-08-21
 
 - Transitioned to online documentation

@@ -1,7 +1,7 @@
 # MK2Z [PROTOTYPE]
 
 !!! info "Revision"
-    This documentation tracks **REV03** (2026-08-21) and is preliminary — content is subject to change without notice. See the [changelog](changelog.md) for revision history.
+    This documentation tracks **REV04** (2026-11-06) and is preliminary — content is subject to change without notice. See the [changelog](changelog.md) for revision history.
 
 !!! warning "Prototype"
     The MK2Z is at prototype stage. Specifications are based on an initial batch of prototype units and might change.
@@ -39,7 +39,7 @@ Autonomous heavy machinery · Precision agriculture · Construction · Aerospace
 
 -   :material-axis-z-rotate-clockwise: __Navigation-grade optical gyroscope__
 
-    On the heading axis (z) · 0.005 °/hr bias
+    On the heading axis (z) · 0.01 °/hr bias
 
 -   :material-rotate-3d-variant: __Low-drift MEMS gyroscopes__
 
@@ -88,10 +88,10 @@ Dynamic Range
 :   ±250 °/sec
 
 In-Run Bias Stability
-:   0.005 to < 0.01 °/hr
+:   0.01 °/hr
 
 Angle Random Walk
-:   0.02 to 0.03 °/√hr
+:   0.01 °/√hr
 
 </div>
 
