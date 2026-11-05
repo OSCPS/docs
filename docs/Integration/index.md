@@ -8,6 +8,10 @@ Ready-made software for talking to an OSCP IMU, so you don't have to implement t
 
     Portable C library (`oscp-imu-c`) for RS422 and CAN-FD integrations
 
+-   [__:material-language-rust: Rust Library__](Rust-Library/index.md)
+
+    Allocation-free Rust crate (`oscp-imu`) for RS422 and CAN-FD integrations
+
 -   [__:material-robot: ROS2__](ROS2/index.md)
     
     IMU Drivers and configuration for robotics ROS2-based applications   
