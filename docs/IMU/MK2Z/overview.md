@@ -85,7 +85,7 @@ Autonomous heavy machinery · Precision agriculture · Construction · Aerospace
 **Optical Gyroscope (z-axis)**{ .specs-group }
 
 Dynamic Range
-:   ±250 °/sec
+:   ±600 °/sec
 
 In-Run Bias Stability
 :   0.01 °/hr
@@ -96,7 +96,7 @@ Angle Random Walk
 </div>
 
 !!! note "Automatic z-axis source switching"
-    The z-axis gyroscope output is sourced from the optical gyroscope while the measured rotation rate stays below 250 °/sec. Above that threshold the output switches automatically to the MEMS gyroscope, maintaining accuracy up to selected range. No configuration or host-side handling is required.
+    The z-axis gyroscope output is sourced from the optical gyroscope while the measured rotation rate stays below 600 °/sec. Above that threshold the output switches automatically to the MEMS gyroscope, maintaining accuracy up to selected range. No configuration or host-side handling is required.
 
 <div class="specs" markdown>
 

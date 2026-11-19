@@ -16,7 +16,7 @@ The OSCP-MK2 IMU offers several real-time configurable parameters, which can als
 </thead>
 <tbody>
 <tr><td>Output Data Rate</td><td>0 Hz, 100 Hz, 500 Hz</td><td class="text-left">Operating mode.</td></tr>
-<tr><td>Gyroscope Dynamic Range</td><td>±125, ±250, ±500, ±1000, ±2000, ±4000 °/sec</td><td class="text-left">Selectable range, applies to the MEMS gyroscopes. On the MK2E2, the optical gyroscope's range is fixed and not user-configurable.</td></tr>
+<tr><td>Gyroscope Dynamic Range</td><td>±125, ±250, ±500, ±1000, ±2000, ±4000 °/sec</td><td class="text-left">Selectable range, applies to the MEMS gyroscopes. On the MK2E2 and MK2Z, the optical gyroscope's range is fixed and not user-configurable.</td></tr>
 <tr><td>Accelerometer Dynamic Range</td><td>± 2 g, ± 4 g, ± 8 g, ± 16 g</td><td class="text-left">Selectable range.</td></tr>
 <tr><td>Inclinometer Dynamic Range</td><td>± 0.5 g, ± 1.0 g, ± 2.0 g, ± 3.0 g</td><td class="text-left">Selectable range.</td></tr>
 <tr><td>Enabled Frame Type</td><td>RAW, EULER, QUATERNION, ROTATION MATRIX, GNSS</td><td class="text-left">Each type of frame can be enabled or disabled. Controller Overruns can occur.</td></tr>

@@ -214,8 +214,8 @@ Two **58-byte** Debug frames (*D*) are available to read back the current unit c
 <tr><td>59 - 60</td><td>Cyclic Redundancy Check (CRC-16)</td><td>See <a href="#integrity-verification">Integrity Verification</a></td></tr>
 </tbody>
 </table>
-!!! note "Variant note — z-axis gyroscope source (MK2E2 only)"
-    On the **MK2E2**, the gyroscope's **z-axis** output (bytes 18-21 above) is sourced from the unit's optical gyroscope when the measured rotation rate is below 250 °/sec. Above this threshold, the output automatically switches to the MEMS gyroscope to maintain accuracy up to the selected range. The **MK2M2** have no optical gyroscope, so their z-axis output always comes from the MEMS gyroscope.
+!!! note "Variant note — z-axis gyroscope source (MK2E2 and MK2Z)"
+    On the **MK2E2** and **MK2Z**, the gyroscope's **z-axis** output (bytes 18-21 above) is sourced from the unit's optical gyroscope while the measured rotation rate stays within the optical gyroscope's dynamic range. Above this threshold, the output automatically switches to the MEMS gyroscope to maintain accuracy up to the selected range. The **MK2M2** have no optical gyroscope, so their z-axis output always comes from the MEMS gyroscope.
  
 ### Euler Angles Frame (E)
  

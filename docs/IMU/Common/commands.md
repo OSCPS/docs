@@ -143,7 +143,7 @@ Remember that, for the RS422 variant, commands must be *COBS*-encoded and termin
 </table>
 
 !!! info "Details"
-    *Range* parameter must be encoded with: **0125**, **0250**, **0500**, **1000**, **2000** or **4000** only. For example, to configure gyroscopes with a DR of *250°/sec*, send *DRG0250\r\n*. This command targets the MEMS gyroscopes; on the MK2E2, the optical gyroscope's fixed range is unaffected.
+    *Range* parameter must be encoded with: **0125**, **0250**, **0500**, **1000**, **2000** or **4000** only. For example, to configure gyroscopes with a DR of *250°/sec*, send *DRG0250\r\n*. This command targets the MEMS gyroscopes; on the MK2E2 and MK2Z, the optical gyroscope's fixed range is unaffected.
  
 ## Change Dynamic Range of Accelerometers
  
