@@ -1,0 +1,45 @@
+:root {
+  --oscp-table-border: rgba(0, 0, 0, 0.2);
+  --oscp-table-zebra: rgba(0, 0, 0, 0.035);
+}
+ 
+[data-md-color-scheme="slate"] {
+  --oscp-table-border: rgba(255, 255, 255, 0.28);
+  --oscp-table-zebra: rgba(255, 255, 255, 0.055);
+}
+ 
+.md-typeset .oscp-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.75rem;
+}
+ 
+.md-typeset .oscp-table th,
+.md-typeset .oscp-table td {
+  border: 1px solid var(--oscp-table-border) !important;
+  padding: 0.5em 0.75em;
+  vertical-align: middle;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+ 
+.md-typeset .oscp-table td.text-left {
+  text-align: left;
+}
+ 
+.md-typeset .oscp-table thead th {
+  background-color: var(--md-default-fg-color--lightest);
+  border-bottom: 2px solid var(--md-primary-fg-color) !important;
+  font-weight: 600;
+}
+ 
+.md-typeset .oscp-table tbody tr:nth-child(even) td {
+  background-color: var(--oscp-table-zebra);
+}
+ 
+.md-typeset .oscp-table caption {
+  caption-side: top;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
